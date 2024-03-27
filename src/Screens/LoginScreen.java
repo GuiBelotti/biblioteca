@@ -7,11 +7,11 @@ public class LoginScreen extends JFrame {
     public LoginScreen(){
 
         setVisible(true);
-        //setSize(600 ,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setMinimumSize(new Dimension(300, 150));
-        pack();
+        setMaximumSize(new Dimension(350, 200));
+
 
         setTitle("Login");
 
@@ -37,6 +37,8 @@ public class LoginScreen extends JFrame {
         contentPane.add(panelBotao, BorderLayout.SOUTH);
 
         setContentPane(contentPane);
+
+        pack();
 
 
     }
