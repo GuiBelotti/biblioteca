@@ -1,8 +1,8 @@
-import Screens.LoginScreen;
-import Screens.MenuScreen;
+import Screens.AdmMenuScreen;
 
 public class Main {
     public static void main(String[] args) {
-        new MenuScreen("Gabriel", "administrador");
+
+        new AdmMenuScreen("Gabriel", "administrador");
     }
 }
