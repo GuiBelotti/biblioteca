@@ -1,6 +1,8 @@
 package Screens;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoginScreen extends JFrame {
 
@@ -40,8 +42,12 @@ public class LoginScreen extends JFrame {
 
         pack();
 
+        botaoLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
 
+                dispose();
+            }
+        });
     }
-
-
 }
