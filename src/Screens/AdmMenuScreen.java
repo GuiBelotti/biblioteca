@@ -155,7 +155,7 @@ public class AdmMenuScreen extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                new AddAndEditScreen("add", bookList, bookDataBase,null,null,null,null);
+                new AddAndEditScreen("add", bookList, bookDataBase, null, null, null, null);
                 List<Book> updatedBookList = bookDataBase.getBookDataBase();
                 updateTable(updatedBookList);
             }
@@ -190,6 +190,4 @@ public class AdmMenuScreen extends JFrame {
             model.addRow(rowData);
         }
     }
-
-
 }

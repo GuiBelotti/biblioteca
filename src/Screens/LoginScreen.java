@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class LoginScreen extends JFrame {
 
-    public LoginScreen(){
+    public LoginScreen() {
 
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,8 +17,8 @@ public class LoginScreen extends JFrame {
 
         setTitle("Login");
 
-        JPanel panel = new JPanel(new GridLayout(3,2));
-        panel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        JPanel panel = new JPanel(new GridLayout(3, 2));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         JLabel labelUsuario = new JLabel("Usuário:");
         JTextField fieldUsuario = new JTextField(15);
@@ -42,12 +42,4 @@ public class LoginScreen extends JFrame {
 
         pack();
 
-        botaoLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-
-                dispose();
-            }
-        });
-    }
-}
+    }}
