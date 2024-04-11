@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
+    </list>
+    <list id="15798d3d-40ed-492f-a61e-3f7fe2ad3efc" name="Changes by CR" comment="">
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="23" end1="24" start2="24" end2="25" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="32" end1="33" start2="33" end2="33" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="49" end1="53" start2="49" end2="54" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="55" end1="61" start2="56" end2="58" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="74" end1="74" start2="71" end2="111" changelist="15798d3d-40ed-492f-a61e-3f7fe2ad3efc" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -45,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "383",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "2",
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/guilherme/Desktop/trabalhoBibliotecaLabPoo/biblioteca",
     "node.js.detected.package.eslint": "true",

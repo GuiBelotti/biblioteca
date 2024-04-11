@@ -24,7 +24,7 @@ public class AdmMenuScreen extends JFrame {
 
     public AdmMenuScreen(String Name, String function, List<Book> bookList, BookDataBase bookDataBase) {
 
-        setTitle("Login");
+        setTitle("Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(800, 550);
@@ -33,7 +33,8 @@ public class AdmMenuScreen extends JFrame {
         this.bookList = bookList;
         this.bookDataBase = bookDataBase;
 
-        columnNames = new String[]{"Título", "Autor", "Categoria", "ISBN"};
+        columnNames = new String[]{"Título", "Autor", "Categoria", "ISBN", "Cópias"}; // Adicionando "Cópias" às colunas
+        String[] boxNames = new String[]{"Título", "Autor", "Categoria", "ISBN"}; // Adicionando "Cópias" às colunas
 
         // ------------- CRIAR OBJETOS ---------------
         JLabel userName = new JLabel("Olá " + Name);
@@ -41,7 +42,7 @@ public class AdmMenuScreen extends JFrame {
         JButton exitButton = new JButton("Sair");
         JButton userButton = new JButton("Usuários");
         JTextField searchTextField = new JTextField();
-        JComboBox<String> typeList = new JComboBox<>(columnNames);
+        JComboBox<String> typeList = new JComboBox<>(boxNames);
         JButton searchButton = new JButton("Pesquisar");
         typeList.setPrototypeDisplayValue("Categoria");
 
@@ -74,7 +75,7 @@ public class AdmMenuScreen extends JFrame {
             }
         });
         for (Book book : bookList) {
-            Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn()};
+            Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn(), book.getQuantTotal()}; // Adicionando o número total de cópias
             model.addRow(rowData);
         }
         JScrollPane scrollPane = new JScrollPane(table);
@@ -108,14 +109,17 @@ public class AdmMenuScreen extends JFrame {
         TableColumn column2 = new TableColumn(1);
         TableColumn column3 = new TableColumn(2);
         TableColumn column4 = new TableColumn(3);
+        TableColumn column5 = new TableColumn(4);
         column1.setHeaderValue("ISBN");
         column2.setHeaderValue("Título");
         column3.setHeaderValue("Categoria");
         column4.setHeaderValue("Autor");
+        column5.setHeaderValue("Cópias");
         table.getColumnModel().getColumn(0).setPreferredWidth(220);
-        table.getColumnModel().getColumn(1).setPreferredWidth(220);
-        table.getColumnModel().getColumn(2).setPreferredWidth(220);
+        table.getColumnModel().getColumn(1).setPreferredWidth(200);
+        table.getColumnModel().getColumn(2).setPreferredWidth(190);
         table.getColumnModel().getColumn(3).setPreferredWidth(50);
+        table.getColumnModel().getColumn(4).setPreferredWidth(50);
 
         // ------------- POSICIONAR OBJETOS ---------------
         userName.setBounds(20, 10, 300, 50);
@@ -147,7 +151,7 @@ public class AdmMenuScreen extends JFrame {
         add(editButton);
         add(devolutionButton);
         add(loanButton);
-        add(statusButton);
+        //add(statusButton);
 
         setLocationRelativeTo(null);
         setVisible(true);
@@ -155,7 +159,7 @@ public class AdmMenuScreen extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                new AddAndEditScreen("add", bookList, bookDataBase, null, null, null, null);
+                new AddAndEditScreen("add", bookDataBase, null, null, null, null);
                 List<Book> updatedBookList = bookDataBase.getBookDataBase();
                 updateTable(updatedBookList);
             }
@@ -170,13 +174,45 @@ public class AdmMenuScreen extends JFrame {
                     String category = (String) table.getValueAt(selectedRow, 2);
                     int isbn = (int) table.getValueAt(selectedRow, 3);
 
-                    new AddAndEditScreen("edit", bookList, bookDataBase, title, author, category, isbn);
+                    new AddAndEditScreen("edit", bookDataBase, title, author, category, isbn);
 
                     List<Book> updatedBookList = bookDataBase.getBookDataBase();
                     updateTable(updatedBookList);
                 } else {
                     JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para editar.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
                 }
+            }
+        });
+
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    String title = (String) table.getValueAt(selectedRow, 0);
+                    String author = (String) table.getValueAt(selectedRow, 1);
+                    String category = (String) table.getValueAt(selectedRow, 2);
+                    int isbn = (int) table.getValueAt(selectedRow, 3);
+
+                    new AddAndEditScreen("delet", bookDataBase, title, author, category, isbn);
+
+                    List<Book> updatedBookList = bookDataBase.getBookDataBase();
+                    updateTable(updatedBookList);
+                }else {
+                    JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para deletar.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
+
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String searchTerm = searchTextField.getText();
+                String searchType = (String) typeList.getSelectedItem();
+
+                assert searchType != null;
+                List<Book> searchResults = bookDataBase.searchBooks(searchTerm, searchType);
+                updateTable(searchResults);
             }
         });
     }
@@ -186,7 +222,7 @@ public class AdmMenuScreen extends JFrame {
         model.setRowCount(0);
 
         for (Book book : bookList) {
-            Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn()};
+            Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn(), book.getQuantTotal()};
             model.addRow(rowData);
         }
     }

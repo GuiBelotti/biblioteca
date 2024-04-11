@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AddAndEditScreen extends JFrame {
 
-    public AddAndEditScreen(String function, List<Book> bookList, BookDataBase bookDataBase, String title, String author, String category, Integer isbn){
+    public AddAndEditScreen(String function, BookDataBase bookDataBase, String title, String author, String category, Integer isbn){
 
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -23,6 +23,8 @@ public class AddAndEditScreen extends JFrame {
             setTitle("Adicionar livro");
         } else if(function.equals("edit")){
             setTitle("Editar livro");
+        } else if(function.equals("delet")){
+            setTitle("Deletar livro");
         }
 
         JPanel panel = new JPanel(new GridLayout(8, 2)); // Adicionando uma linha para o novo ISBN
@@ -39,14 +41,22 @@ public class AddAndEditScreen extends JFrame {
         JLabel labelQuantTotal = new JLabel("Cópias:");
         JTextField fieldQuantTotal = new JTextField(15);
 
-        JLabel labelNewIsbn = new JLabel("Novo ISBN:"); // Label para o novo ISBN
-        JTextField fieldNewIsbn = new JTextField(15); // Campo de texto para o novo ISBN
+        JLabel titleOfDeletedBook = new JLabel("  " + title);
+        JLabel authorOfDeletedBook = new JLabel("  " + author);
+        JLabel categoryOfDeletedBook = new JLabel("  " + category);
+        JLabel isbnOfDeletedBook = new JLabel(String.valueOf("  " + isbn));
+
+        titleOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        authorOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        categoryOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        isbnOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         if(function.equals("edit")){
             fieldTitulo.setText(title);
             fieldIsbn.setText(String.valueOf(isbn));
             fieldAuthor.setText(author);
             fieldCategory.setText(category);
+
             fieldQuantTotal.setText("teste");
         } else if(function.equals("add")){
             fieldTitulo.setText("");
@@ -54,77 +64,106 @@ public class AddAndEditScreen extends JFrame {
             fieldAuthor.setText("");
             fieldCategory.setText("");
             fieldQuantTotal.setText("");
+
         }
 
-        panel.add(labelTitulo);
-        panel.add(fieldTitulo);
+        if(!function.equals("delet")){
+            panel.add(labelTitulo);
+            panel.add(fieldTitulo);
+            panel.add(labelAuthor);
+            panel.add(fieldAuthor);
+            panel.add(labelCategory);
+            panel.add(fieldCategory);
+            panel.add(labelIsbn);
+            panel.add(fieldIsbn);
+            panel.add(labelQuantTotal);
+            panel.add(fieldQuantTotal);
+            JPanel panelBotao = new JPanel(new FlowLayout(FlowLayout.CENTER));
+            JButton botaoSave = new JButton("Salvar");
+            panelBotao.add(botaoSave);
+            JPanel contentPane = new JPanel(new BorderLayout());
+            contentPane.add(panel, BorderLayout.CENTER);
+            contentPane.add(panelBotao, BorderLayout.SOUTH);
 
-        panel.add(labelAuthor);
-        panel.add(fieldAuthor);
+            setContentPane(contentPane);
 
-        panel.add(labelCategory);
-        panel.add(fieldCategory);
+            pack();
 
-        panel.add(labelIsbn);
-        panel.add(fieldIsbn);
+            if(function.equals("add")){
+                botaoSave.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent event) {
+                        String title = fieldTitulo.getText();
+                        String author = fieldAuthor.getText();
+                        String category = fieldCategory.getText();
+                        String isbnText = fieldIsbn.getText();
+                        String quantTotalText = fieldQuantTotal.getText();
 
-        panel.add(labelNewIsbn);
-        panel.add(fieldNewIsbn);
+                        if (title.isEmpty() || author.isEmpty() || category.isEmpty() || isbnText.isEmpty() || quantTotalText.isEmpty()) {
+                            JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, preencha todos os campos.", "Campos obrigatórios vazios", JOptionPane.WARNING_MESSAGE);
+                        } else {
+                            try {
+                                int isbn = Integer.parseInt(isbnText);
+                                int quantTotal = Integer.parseInt(quantTotalText);
 
-        panel.add(labelQuantTotal);
-        panel.add(fieldQuantTotal);
+                                bookDataBase.addBook(title, author, category, isbn, quantTotal);
+                                AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
 
-        JPanel panelBotao = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JButton botaoSave = new JButton("Salvar");
-        panelBotao.add(botaoSave);
-
-        JPanel contentPane = new JPanel(new BorderLayout());
-        contentPane.add(panel, BorderLayout.CENTER);
-        contentPane.add(panelBotao, BorderLayout.SOUTH);
-
-        setContentPane(contentPane);
-
-        pack();
-        if(function.equals("add")){
-            botaoSave.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent event) {
-                    String title = fieldTitulo.getText();
-                    String author = fieldAuthor.getText();
-                    String category = fieldCategory.getText();
-                    String isbnText = fieldIsbn.getText();
-                    String quantTotalText = fieldQuantTotal.getText();
-
-                    if (title.isEmpty() || author.isEmpty() || category.isEmpty() || isbnText.isEmpty() || quantTotalText.isEmpty()) {
-                        JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, preencha todos os campos.", "Campos obrigatórios vazios", JOptionPane.WARNING_MESSAGE);
-                    } else {
-                        try {
-                            int isbn = Integer.parseInt(isbnText);
-                            int quantTotal = Integer.parseInt(quantTotalText);
-
-                            bookDataBase.addBook(title, author, category, isbn, quantTotal);
-                            AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
-
-                            // Fechar a janela atual
-                            dispose();
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, insira um valor válido para ISBN e quantidade total.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
+                                // Fechar a janela atual
+                                dispose();
+                            } catch (NumberFormatException e) {
+                                JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, insira um valor válido para ISBN e quantidade total.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
+                            }
                         }
                     }
-                }
-            });
-        } else if(function.equals("edit")){
-            botaoSave.addActionListener(new ActionListener() {
+                });
+            } else if(function.equals("edit")){
+                botaoSave.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent event) {
+                        String title = fieldTitulo.getText();
+                        String author = fieldAuthor.getText();
+                        String category = fieldCategory.getText();
+                        int newIsbn = Integer.parseInt(fieldIsbn.getText());
+                        int quantTotal = Integer.parseInt(fieldQuantTotal.getText());
+
+                        bookDataBase.editBook(isbn, title, author, category, newIsbn, quantTotal); // Passando o ISBN antigo e o novo
+                        AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
+                        dispose();
+                    }
+                });
+
+            }
+        }
+
+        if(function.equals("delet")){
+            panel.add(labelTitulo);
+            panel.add(titleOfDeletedBook);
+
+            panel.add(labelAuthor);
+            panel.add(authorOfDeletedBook);
+
+            panel.add(labelCategory);
+            panel.add(categoryOfDeletedBook);
+
+            panel.add(labelIsbn);
+            panel.add(isbnOfDeletedBook);
+
+            JPanel panelBotao = new JPanel(new FlowLayout(FlowLayout.CENTER));
+            JButton botaoDelet = new JButton("Deletar");
+            panelBotao.add(botaoDelet);
+            JPanel contentPane = new JPanel(new BorderLayout());
+            contentPane.add(panel, BorderLayout.CENTER);
+            contentPane.add(panelBotao, BorderLayout.SOUTH);
+
+            setContentPane(contentPane);
+
+            pack();
+
+            botaoDelet.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent event) {
-                    String title = fieldTitulo.getText();
-                    String author = fieldAuthor.getText();
-                    String category = fieldCategory.getText();
-                    int oldIsbn = Integer.parseInt(fieldIsbn.getText());
-                    int newIsbn = Integer.parseInt(fieldNewIsbn.getText()); // Obtendo o novo ISBN
-                    int quantTotal = Integer.parseInt(fieldQuantTotal.getText());
-
-                    bookDataBase.editBook(oldIsbn, title, author, category, newIsbn, quantTotal, quantTotal); // Passando o ISBN antigo e o novo
+                    bookDataBase.deletedBook(isbn);
                     AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
                     dispose();
                 }
@@ -132,6 +171,13 @@ public class AddAndEditScreen extends JFrame {
 
         }
 
+
+
+        }
+
+
+
+
+
     }
 
-}

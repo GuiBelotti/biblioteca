@@ -1,5 +1,6 @@
 package BookRelacioned;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class BookDataBase {
@@ -21,7 +22,7 @@ public class BookDataBase {
         System.out.println("Add");
     }
 
-    public void editBook(int isbn, String newTitle, String newAuthor, String newCategory, Integer newIsbn, Integer newQuantTotal, Integer newQuantDisponivel) {
+    public void editBook(int isbn, String newTitle, String newAuthor, String newCategory, Integer newIsbn, Integer newQuantTotal) {
 
         for (Book livro : bookDataBase) {
             System.out.println("\ntitle : " + livro.getTitle() + "\nauthor : " + livro.getAuthor() + "\ncategory : "
@@ -30,7 +31,6 @@ public class BookDataBase {
 
         for(Book bookEdit : bookDataBase) {
             if(bookEdit.getIsbn() == isbn) {
-                //bookEdit.setQuantDisponivel(newQuantDisponivel != null ? newQuantTotal : bookEdit.getQuantDisponivel());
                 bookEdit.setQuantTotal(newQuantTotal != null ? newQuantTotal : bookEdit.getQuantTotal());
                 bookEdit.setTitle(newTitle != null ? newTitle : bookEdit.getTitle());
                 bookEdit.setAuthor(newAuthor != null ? newAuthor : bookEdit.getAuthor());
@@ -47,18 +47,15 @@ public class BookDataBase {
 
     }
     public void deletedBook(int isbn) {
-
-        for(Book bookDeleted : bookDataBase) {
-            if ((bookDeleted.getIsbn() == isbn)) {
-                bookDataBase.remove(bookDeleted);
+        Iterator<Book> iterator = bookDataBase.iterator();
+        while (iterator.hasNext()) {
+            Book bookDeleted = iterator.next();
+            if (bookDeleted.getIsbn() == isbn) {
+                iterator.remove();
             }
         }
-        System.out.println("\n\nApos remoção\n\n");
-        for (Book livro : bookDataBase) {
-            System.out.println("\ntitle : " + livro.getTitle() + "\nauthor : " + livro.getAuthor() + "\ncategory : "
-                    + livro.getCategory() + "\nisbn : " + livro.getIsbn() + "\nQuantidade: " + livro.getQuantTotal());
-        }
     }
+
     public void attDispo(int isbn, int newDispo) {
 
         for(Book bookAttDispo : bookDataBase){
@@ -71,6 +68,46 @@ public class BookDataBase {
                     + livro.getCategory() + "\nisbn : " + livro.getIsbn() + "\nQuantidade: " + livro.getQuantTotal());
         }
 
+    }
+
+    public List<Book> searchBooks(String searchTerm, String searchType) {
+        List<Book> searchResults = new ArrayList<>();
+        switch (searchType) {
+            case "Título":
+                for (Book book : bookDataBase) {
+                    if (book.getTitle().equalsIgnoreCase(searchTerm)) {
+                        searchResults.add(book);
+                    }
+                }
+                break;
+            case "Autor":
+                for (Book book : bookDataBase) {
+                    if (book.getAuthor().equalsIgnoreCase(searchTerm)) {
+                        searchResults.add(book);
+                    }
+                }
+                break;
+            case "Categoria":
+                for (Book book : bookDataBase) {
+                    if (book.getCategory().equalsIgnoreCase(searchTerm)) {
+                        searchResults.add(book);
+                    }
+                }
+                break;
+            case "ISBN":
+                for (Book book : bookDataBase) {
+                    if (book.getCategory().equalsIgnoreCase(searchTerm)) {
+                        searchResults.add(book);
+                    }
+                }
+                break;
+            // Adicione mais tipos de pesquisa, se necessário...
+            default:
+                // Tratamento de erro ou outro comportamento, se necessário
+                break;
+        }
+
+        return searchResults;
     }
 
 //    public void emprestimoDevolucaoBook(String funcao, int isbn){

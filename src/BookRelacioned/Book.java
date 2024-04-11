@@ -7,7 +7,7 @@ public class Book {
     private int isbn;
     private int quantTotal;
 
-    //private int quantDisponivel;
+    //private int quantEmprestada;
 
     public Book(String title,String author,String category, int isbn, int quantTotal) {
         this.title = title;
@@ -56,15 +56,6 @@ public class Book {
 //        this.quantDisponivel = quantDisponivel;
 //    }
 
-
-//    public Function AddBook(String title, String author, String category, int isbn){
-//        String titleBook = title;
-//        String authirBook = author;
-//        String categoryBook = category;
-//        int isbnBook = isbn;
-//
-//        return null;
-//    }
 
 
 }
