@@ -7,11 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class AddAndEditScreen extends JFrame {
 
-    public AddAndEditScreen(String function, BookDataBase bookDataBase, String title, String author, String category, Integer isbn){
+    public AddAndEditScreen(String function, BookDataBase bookDataBase, String title, String author, String category, Integer isbn, Integer copias){
 
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -46,6 +45,7 @@ public class AddAndEditScreen extends JFrame {
         JLabel categoryOfDeletedBook = new JLabel("  " + category);
         JLabel isbnOfDeletedBook = new JLabel(String.valueOf("  " + isbn));
 
+
         titleOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         authorOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         categoryOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
@@ -57,7 +57,7 @@ public class AddAndEditScreen extends JFrame {
             fieldAuthor.setText(author);
             fieldCategory.setText(category);
 
-            fieldQuantTotal.setText("teste");
+            fieldQuantTotal.setText(String.valueOf(copias));
         } else if(function.equals("add")){
             fieldTitulo.setText("");
             fieldIsbn.setText(String.valueOf(""));
@@ -98,22 +98,30 @@ public class AddAndEditScreen extends JFrame {
                         String category = fieldCategory.getText();
                         String isbnText = fieldIsbn.getText();
                         String quantTotalText = fieldQuantTotal.getText();
+                        try {
+                            int isbn = Integer.parseInt(isbnText);
+                            int quantTotal = Integer.parseInt(quantTotalText);
 
-                        if (title.isEmpty() || author.isEmpty() || category.isEmpty() || isbnText.isEmpty() || quantTotalText.isEmpty()) {
-                            JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, preencha todos os campos.", "Campos obrigatórios vazios", JOptionPane.WARNING_MESSAGE);
-                        } else {
-                            try {
-                                int isbn = Integer.parseInt(isbnText);
-                                int quantTotal = Integer.parseInt(quantTotalText);
+                            boolean isbnExists = false;
+                            for (Book existingBook : bookDataBase.getBookDataBase()) {
+                                if (existingBook.getIsbn() == isbn) {
+                                    isbnExists = true;
+                                    break;
+                                }
+                            }
+                            if (isbnExists) {
+                                fieldIsbn.setBorder(BorderFactory.createLineBorder(Color.red, 1));
+                                JOptionPane.showMessageDialog(AddAndEditScreen.this, "Já existe um livro com o mesmo ISBN.", "Erro", JOptionPane.ERROR_MESSAGE);
+                            } else {
 
                                 bookDataBase.addBook(title, author, category, isbn, quantTotal);
                                 AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
 
-                                // Fechar a janela atual
                                 dispose();
-                            } catch (NumberFormatException e) {
-                                JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, insira um valor válido para ISBN e quantidade total.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
                             }
+                        } catch (NumberFormatException e) {
+
+                            JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, insira um valor válido para ISBN e quantidade total.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
                         }
                     }
                 });
@@ -127,9 +135,21 @@ public class AddAndEditScreen extends JFrame {
                         int newIsbn = Integer.parseInt(fieldIsbn.getText());
                         int quantTotal = Integer.parseInt(fieldQuantTotal.getText());
 
-                        bookDataBase.editBook(isbn, title, author, category, newIsbn, quantTotal); // Passando o ISBN antigo e o novo
-                        AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
-                        dispose();
+                        boolean isbnExists = false;
+                        for (Book existingBook : bookDataBase.getBookDataBase()) {
+                            if (existingBook.getIsbn() == newIsbn && existingBook.getIsbn() != isbn) {
+                                isbnExists = true;
+                                break;
+                            }
+                        }
+                        if (isbnExists) {
+                            fieldIsbn.setBorder(BorderFactory.createLineBorder(Color.red, 1));
+                            JOptionPane.showMessageDialog(AddAndEditScreen.this, "Já existe um livro com o mesmo ISBN.", "Erro", JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            bookDataBase.editBook(isbn, title, author, category, newIsbn, quantTotal);
+                            AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
+                            dispose();
+                        }
                     }
                 });
 

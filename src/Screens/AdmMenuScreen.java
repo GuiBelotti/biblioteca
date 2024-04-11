@@ -159,7 +159,7 @@ public class AdmMenuScreen extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                new AddAndEditScreen("add", bookDataBase, null, null, null, null);
+                new AddAndEditScreen("add", bookDataBase, null, null, null, null, null);
                 List<Book> updatedBookList = bookDataBase.getBookDataBase();
                 updateTable(updatedBookList);
             }
@@ -173,8 +173,9 @@ public class AdmMenuScreen extends JFrame {
                     String author = (String) table.getValueAt(selectedRow, 1);
                     String category = (String) table.getValueAt(selectedRow, 2);
                     int isbn = (int) table.getValueAt(selectedRow, 3);
+                    int copias = (int) table.getValueAt(selectedRow, 4);
 
-                    new AddAndEditScreen("edit", bookDataBase, title, author, category, isbn);
+                    new AddAndEditScreen("edit", bookDataBase, title, author, category, isbn, copias);
 
                     List<Book> updatedBookList = bookDataBase.getBookDataBase();
                     updateTable(updatedBookList);
@@ -194,7 +195,7 @@ public class AdmMenuScreen extends JFrame {
                     String category = (String) table.getValueAt(selectedRow, 2);
                     int isbn = (int) table.getValueAt(selectedRow, 3);
 
-                    new AddAndEditScreen("delet", bookDataBase, title, author, category, isbn);
+                    new AddAndEditScreen("delet", bookDataBase, title, author, category, isbn,null);
 
                     List<Book> updatedBookList = bookDataBase.getBookDataBase();
                     updateTable(updatedBookList);
@@ -210,11 +211,18 @@ public class AdmMenuScreen extends JFrame {
                 String searchTerm = searchTextField.getText();
                 String searchType = (String) typeList.getSelectedItem();
 
-                assert searchType != null;
-                List<Book> searchResults = bookDataBase.searchBooks(searchTerm, searchType);
-                updateTable(searchResults);
+                List<Book> updatedBookList;
+                if (searchTerm.isEmpty()){
+                    updatedBookList = bookDataBase.getBookDataBase();
+                    updateTable(updatedBookList);
+                }
+                else {
+                    List<Book> searchResults = bookDataBase.searchBooks(searchTerm, searchType);
+                    updateTable(searchResults);
+                }
             }
         });
+
     }
 
     static void updateTable(List<Book> bookList) {

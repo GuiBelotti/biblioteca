@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OQFAZER" beforeDir="false" afterPath="$PROJECT_DIR$/src/OQFAZER" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
     </list>
-    <list id="15798d3d-40ed-492f-a61e-3f7fe2ad3efc" name="Changes by CR" comment="">
+    <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="">
       <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +35,25 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java">
       <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="23" end1="24" start2="24" end2="25" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="32" end1="33" start2="33" end2="33" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="49" end1="53" start2="49" end2="54" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="55" end1="61" start2="56" end2="58" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="74" end1="74" start2="71" end2="111" changelist="15798d3d-40ed-492f-a61e-3f7fe2ad3efc" />
+        <range start1="1" end1="1" start2="1" end2="2" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="16" end1="17" start2="17" end2="25" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="18" end1="22" start2="26" end2="33" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="26" end1="31" start2="37" end2="37" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="32" end1="32" start2="38" end2="39" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="40" end1="47" start2="47" end2="47" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="74" end1="99" start2="74" end2="106" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="101" end1="108" start2="108" end2="112" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="109" end1="109" start2="113" end2="115" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java">
+      <ranges>
+        <range start1="161" end1="162" start2="161" end2="162" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="175" end1="175" start2="175" end2="176" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="176" end1="177" start2="177" end2="178" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="196" end1="197" start2="197" end2="198" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="212" end1="215" start2="213" end2="222" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="217" end1="217" start2="224" end2="225" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
       </ranges>
     </file>
   </component>

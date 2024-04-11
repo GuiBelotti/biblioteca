@@ -1,4 +1,5 @@
 package BookRelacioned;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -14,22 +15,28 @@ public class BookDataBase {
     public BookDataBase(){
         this.bookDataBase = new ArrayList<>();
     }
-    public void addBook(String title, String author, String category, int isbn, int quantTotal){
+    public void addBook(String title, String author, String category, int isbn, int quantTotal) {
+        boolean isbnExists = false;
+        for (Book existingBook : bookDataBase) {
+            if (existingBook.getIsbn() == isbn) {
+                isbnExists = true;
+                break;
+            }
+        }
 
-        Book newBook = new Book(title,author,category,isbn,quantTotal);
-        bookDataBase.add(newBook);
-
-        System.out.println("Add");
+        if (isbnExists) {
+            JOptionPane.showMessageDialog(null, "Já existe um livro com o mesmo ISBN.", "Erro", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Book newBook = new Book(title, author, category, isbn, quantTotal);
+            bookDataBase.add(newBook);
+            System.out.println("Livro adicionado com sucesso.");
+        }
     }
 
     public void editBook(int isbn, String newTitle, String newAuthor, String newCategory, Integer newIsbn, Integer newQuantTotal) {
 
-        for (Book livro : bookDataBase) {
-            System.out.println("\ntitle : " + livro.getTitle() + "\nauthor : " + livro.getAuthor() + "\ncategory : "
-                    + livro.getCategory() + "\nisbn : " + livro.getIsbn() + "Quantidade: " + livro.getQuantTotal());
-        }
-
         for(Book bookEdit : bookDataBase) {
+
             if(bookEdit.getIsbn() == isbn) {
                 bookEdit.setQuantTotal(newQuantTotal != null ? newQuantTotal : bookEdit.getQuantTotal());
                 bookEdit.setTitle(newTitle != null ? newTitle : bookEdit.getTitle());
@@ -38,13 +45,6 @@ public class BookDataBase {
                 bookEdit.setIsbn(newIsbn != null ? newIsbn : bookEdit.getIsbn());
             }
         }
-        System.out.println("\n\nApos edição\n\n");
-
-        for (Book livro : bookDataBase) {
-            System.out.println("\ntitle : " + livro.getTitle() + "\nauthor : " + livro.getAuthor() + "\ncategory : "
-                    + livro.getCategory() + "\nisbn : " + livro.getIsbn() + "\nQuantidade: " + livro.getQuantTotal());
-        }
-
     }
     public void deletedBook(int isbn) {
         Iterator<Book> iterator = bookDataBase.iterator();
@@ -72,39 +72,45 @@ public class BookDataBase {
 
     public List<Book> searchBooks(String searchTerm, String searchType) {
         List<Book> searchResults = new ArrayList<>();
-        switch (searchType) {
-            case "Título":
-                for (Book book : bookDataBase) {
-                    if (book.getTitle().equalsIgnoreCase(searchTerm)) {
+
+        for (Book book : bookDataBase) {
+            String title = book.getTitle().toLowerCase();
+            String author = book.getAuthor().toLowerCase();
+            String category = book.getCategory().toLowerCase();
+
+            switch (searchType) {
+                case "Título":
+                    if (searchTerm.length() >= 2) {
+                        if (title.contains(searchTerm)) {
+                            searchResults.add(book);
+                        }
+                    }
+
+                    break;
+                case "Autor":
+                    if (searchTerm.length() >= 2) {
+                        if (author.contains(searchTerm)) {
+                            searchResults.add(book);
+                        }
+                    }
+                    break;
+                case "Categoria":
+                    if (searchTerm.length() >= 2) {
+                        if (category.contains(searchTerm)) {
+                            searchResults.add(book);
+                        }
+                    }
+                    break;
+                case "ISBN":
+                    String isbnString = String.valueOf(book.getIsbn());
+                    if (isbnString.equalsIgnoreCase(searchTerm)) {
                         searchResults.add(book);
                     }
-                }
-                break;
-            case "Autor":
-                for (Book book : bookDataBase) {
-                    if (book.getAuthor().equalsIgnoreCase(searchTerm)) {
-                        searchResults.add(book);
-                    }
-                }
-                break;
-            case "Categoria":
-                for (Book book : bookDataBase) {
-                    if (book.getCategory().equalsIgnoreCase(searchTerm)) {
-                        searchResults.add(book);
-                    }
-                }
-                break;
-            case "ISBN":
-                for (Book book : bookDataBase) {
-                    if (book.getCategory().equalsIgnoreCase(searchTerm)) {
-                        searchResults.add(book);
-                    }
-                }
-                break;
-            // Adicione mais tipos de pesquisa, se necessário...
-            default:
-                // Tratamento de erro ou outro comportamento, se necessário
-                break;
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         return searchResults;

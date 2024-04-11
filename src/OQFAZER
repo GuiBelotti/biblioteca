@@ -1,6 +1,12 @@
-limitar o isbn
-arrumar botoes de isb e quantidade
+mostrar isbn disponivel
+deixar na ordem pelo isbn
 
 
+sts de disponibilidade
+    deixar o livro diponivel ou indisponivel
+        mostrar o ngc vermelho
+        caso indisponivel
 
-colocar as funçoes para erro ao editar e add
+prazo de emprestimo
+    definir parazo para o livro
+    tela diferente
