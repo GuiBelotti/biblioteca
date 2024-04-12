@@ -1,8 +1,6 @@
 package BookRelacioned;
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class BookDataBase {
 
@@ -29,6 +27,8 @@ public class BookDataBase {
         } else {
             Book newBook = new Book(title, author, category, isbn, quantTotal);
             bookDataBase.add(newBook);
+            // Ordena a lista de livros pelo ISBN
+            Collections.sort(bookDataBase, Comparator.comparingInt(Book::getIsbn));
             System.out.println("Livro adicionado com sucesso.");
         }
     }

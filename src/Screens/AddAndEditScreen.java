@@ -1,12 +1,13 @@
 package Screens;
-
+import java.util.Collections;
 import BookRelacioned.Book;
 import BookRelacioned.BookDataBase;
-
+import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class AddAndEditScreen extends JFrame {
 
@@ -98,29 +99,29 @@ public class AddAndEditScreen extends JFrame {
                         String category = fieldCategory.getText();
                         String isbnText = fieldIsbn.getText();
                         String quantTotalText = fieldQuantTotal.getText();
+
                         try {
                             int isbn = Integer.parseInt(isbnText);
                             int quantTotal = Integer.parseInt(quantTotalText);
 
                             boolean isbnExists = false;
+
                             for (Book existingBook : bookDataBase.getBookDataBase()) {
                                 if (existingBook.getIsbn() == isbn) {
                                     isbnExists = true;
                                     break;
                                 }
                             }
+
                             if (isbnExists) {
                                 fieldIsbn.setBorder(BorderFactory.createLineBorder(Color.red, 1));
                                 JOptionPane.showMessageDialog(AddAndEditScreen.this, "Já existe um livro com o mesmo ISBN.", "Erro", JOptionPane.ERROR_MESSAGE);
                             } else {
-
                                 bookDataBase.addBook(title, author, category, isbn, quantTotal);
                                 AdmMenuScreen.updateTable(bookDataBase.getBookDataBase());
-
                                 dispose();
                             }
                         } catch (NumberFormatException e) {
-
                             JOptionPane.showMessageDialog(AddAndEditScreen.this, "Por favor, insira um valor válido para ISBN e quantidade total.", "Erro de Entrada", JOptionPane.ERROR_MESSAGE);
                         }
                     }

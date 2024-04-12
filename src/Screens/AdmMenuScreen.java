@@ -85,6 +85,7 @@ public class AdmMenuScreen extends JFrame {
         JButton devolutionButton = new JButton("Devolver");
         JButton loanButton = new JButton("Emprestar");
         JButton statusButton = new JButton("Status");
+        JButton prazoButton = new JButton("Prazo");
         //table.setEnabled(false);
         table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
@@ -130,12 +131,14 @@ public class AdmMenuScreen extends JFrame {
         typeList.setBounds(268, 100, 246, 30);
         searchButton.setBounds(518, 100, 246, 30);
         scrollPane.setBounds(20, 150, 745, 300);
-        addButton.setBounds(20, 470, 118, 30);
-        deleteButton.setBounds(142, 470, 118, 30);
-        editButton.setBounds(264, 470, 118, 30);
-        loanButton.setBounds(386, 470, 118, 30);
-        devolutionButton.setBounds(508, 470, 118, 30);
-        statusButton.setBounds(630, 470, 118, 30);
+
+        addButton.setBounds(20, 470, 91, 30);
+        deleteButton.setBounds(131, 470, 91, 30);
+        editButton.setBounds(244, 470, 91, 30);
+        loanButton.setBounds(353, 470, 91, 30);
+        devolutionButton.setBounds(464, 470, 91, 30);
+        statusButton.setBounds(575, 470, 91, 30);
+        prazoButton.setBounds(686, 470, 91, 30);
 
         // ------------- ADICIONAR OBJETOS ---------------
         add(userName);
@@ -151,7 +154,8 @@ public class AdmMenuScreen extends JFrame {
         add(editButton);
         add(devolutionButton);
         add(loanButton);
-        //add(statusButton);
+        add(statusButton);
+        add(prazoButton);
 
         setLocationRelativeTo(null);
         setVisible(true);
@@ -222,6 +226,24 @@ public class AdmMenuScreen extends JFrame {
                 }
             }
         });
+
+        statusButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    int isbn = (int) table.getValueAt(selectedRow, 3);
+                    // Aqui você pode implementar a lógica para atualizar o status do livro com o ISBN selecionado
+                    // Exemplo:
+                    // bookDataBase.updateStatus(isbn, novoStatus);
+                    // Atualiza a tabela após a alteração
+                    updateTable(bookDataBase.getBookDataBase());
+                } else {
+                    JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para atualizar o status.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
+
 
     }
 

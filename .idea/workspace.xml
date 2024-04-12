@@ -7,15 +7,10 @@
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OQFAZER" beforeDir="false" afterPath="$PROJECT_DIR$/src/OQFAZER" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
     </list>
-    <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="">
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
-    </list>
+    <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,31 +27,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="16" end1="17" start2="17" end2="25" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="18" end1="22" start2="26" end2="33" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="26" end1="31" start2="37" end2="37" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="32" end1="32" start2="38" end2="39" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="40" end1="47" start2="47" end2="47" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="74" end1="99" start2="74" end2="106" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
-        <range start1="101" end1="108" start2="108" end2="112" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
-        <range start1="109" end1="109" start2="113" end2="115" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java">
-      <ranges>
-        <range start1="161" end1="162" start2="161" end2="162" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="175" end1="175" start2="175" end2="176" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="176" end1="177" start2="177" end2="178" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="196" end1="197" start2="197" end2="198" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
-        <range start1="212" end1="215" start2="213" end2="222" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
-        <range start1="217" end1="217" start2="224" end2="225" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -66,31 +36,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ChildExample.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.teste.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "383",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "2",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/guilherme/Desktop/trabalhoBibliotecaLabPoo/biblioteca",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/guilherme/IdeaProjects/biblioteca/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ChildExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.teste.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;383&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/guilherme/Desktop/trabalhoBibliotecaLabPoo/biblioteca&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/guilherme/IdeaProjects/biblioteca/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -133,6 +103,7 @@
       <workItem from="1712711043018" duration="17000" />
       <workItem from="1712760216046" duration="83000" />
       <workItem from="1712760311563" duration="5310000" />
+      <workItem from="1712954140448" duration="2433000" />
     </task>
     <servers />
   </component>
