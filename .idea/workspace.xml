@@ -6,9 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OQFAZER" beforeDir="false" afterPath="$PROJECT_DIR$/src/OQFAZER" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
     </list>
-    <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
+    <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="">
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +36,127 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java">
+      <ranges>
+        <range start1="15" end1="16" start2="15" end2="17" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="23" end1="24" start2="24" end2="24" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="27" end1="28" start2="27" end2="31" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="29" end1="30" start2="32" end2="32" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="34" end1="34" start2="36" end2="37" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="35" end1="36" start2="38" end2="39" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="45" end1="45" start2="48" end2="49" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="49" end1="49" start2="53" end2="55" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="58" end1="72" start2="64" end2="65" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="80" end1="80" start2="73" end2="75" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="87" end1="88" start2="82" end2="82" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="114" end1="115" start2="108" end2="109" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Screens/LoginScreen.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="3" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="8" end1="9" start2="10" end2="11" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="10" end1="10" start2="12" end2="13" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="22" end1="22" start2="25" end2="26" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="26" end1="27" start2="30" end2="31" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="43" end1="43" start2="47" end2="58" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Main.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="1" end1="2" start2="2" end2="2" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="9" end1="43" start2="9" end2="38" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="45" end1="48" start2="40" end2="42" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="51" end1="60" start2="45" end2="45" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java">
+      <ranges>
+        <range start1="1" end1="2" start2="1" end2="1" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="4" end1="5" start2="3" end2="4" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="9" end1="10" start2="8" end2="8" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="11" end1="12" start2="9" end2="10" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="13" end1="14" start2="11" end2="12" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="15" end1="15" start2="13" end2="14" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="21" end1="31" start2="20" end2="23" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="32" end1="32" start2="24" end2="25" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="42" end1="42" start2="35" end2="39" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="47" end1="49" start2="44" end2="44" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="54" end1="71" start2="49" end2="51" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="79" end1="79" start2="59" end2="61" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="92" end1="93" start2="74" end2="85" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="101" end1="101" start2="93" end2="94" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="105" end1="105" start2="98" end2="99" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="107" end1="108" start2="101" end2="102" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="115" end1="115" start2="109" end2="110" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="117" end1="118" start2="112" end2="113" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="119" end1="120" start2="114" end2="117" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="124" end1="125" start2="121" end2="122" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="126" end1="126" start2="123" end2="124" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="128" end1="129" start2="126" end2="135" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="132" end1="132" start2="138" end2="139" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="137" end1="137" start2="144" end2="145" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="138" end1="138" start2="146" end2="147" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="145" end1="145" start2="154" end2="155" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="147" end1="148" start2="157" end2="158" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="149" end1="150" start2="159" end2="161" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="157" end1="158" start2="168" end2="169" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="159" end1="160" start2="170" end2="173" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="162" end1="163" start2="175" end2="175" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="165" end1="166" start2="177" end2="177" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="168" end1="169" start2="179" end2="179" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="186" end1="186" start2="196" end2="197" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="194" end1="202" start2="205" end2="206" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java">
+      <ranges>
+        <range start1="1" end1="2" start2="1" end2="1" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="13" end1="14" start2="12" end2="12" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="18" end1="19" start2="16" end2="16" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="26" end1="26" start2="23" end2="24" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="35" end1="37" start2="33" end2="35" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="38" end1="39" start2="36" end2="40" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="48" end1="48" start2="49" end2="50" changelist="938097ab-a2b4-4a03-98c0-7b789910981e" />
+        <range start1="52" end1="52" start2="54" end2="55" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="53" end1="54" start2="56" end2="57" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="58" end1="58" start2="61" end2="62" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="62" end1="62" start2="66" end2="67" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="77" end1="78" start2="82" end2="84" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="80" end1="80" start2="86" end2="88" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="87" end1="89" start2="95" end2="96" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="95" end1="100" start2="102" end2="113" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="101" end1="102" start2="114" end2="114" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="119" end1="120" start2="131" end2="132" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="138" end1="139" start2="150" end2="151" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="148" end1="155" start2="160" end2="166" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="156" end1="157" start2="167" end2="168" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="171" end1="172" start2="182" end2="182" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="176" end1="176" start2="186" end2="187" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="179" end1="180" start2="190" end2="192" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="184" end1="184" start2="196" end2="198" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="186" end1="186" start2="200" end2="201" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="194" end1="194" start2="209" end2="210" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="195" end1="196" start2="211" end2="212" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="199" end1="199" start2="215" end2="216" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="205" end1="205" start2="222" end2="223" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="209" end1="209" start2="227" end2="228" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="214" end1="216" start2="233" end2="235" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="219" end1="220" start2="238" end2="240" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="225" end1="225" start2="245" end2="246" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="232" end1="233" start2="253" end2="255" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="235" end1="237" start2="257" end2="258" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="243" end1="243" start2="264" end2="265" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="247" end1="247" start2="269" end2="270" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="249" end1="254" start2="272" end2="309" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="260" end1="261" start2="315" end2="315" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="268" end1="269" start2="322" end2="323" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+        <range start1="272" end1="272" start2="326" end2="327" changelist="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -101,7 +234,7 @@
       <workItem from="1712711043018" duration="17000" />
       <workItem from="1712760216046" duration="83000" />
       <workItem from="1712760311563" duration="5310000" />
-      <workItem from="1712954140448" duration="3115000" />
+      <workItem from="1712954140448" duration="12232000" />
     </task>
     <servers />
   </component>

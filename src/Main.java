@@ -1,5 +1,5 @@
+import BookRelacioned.Book;
 import BookRelacioned.BookDataBase;
-import Screens.AddAndEditScreen;
 import Screens.AdmMenuScreen;
 import Screens.LoginScreen;
 
@@ -7,54 +7,38 @@ public class Main {
     public static void main(String[] args) {
 
         BookDataBase bookDataBase = new BookDataBase();
-        bookDataBase.addBook("POO","Carlos","estudo",1,10);
-        bookDataBase.addBook("BD","Carlos","estudo",2,10);
-        bookDataBase.addBook("Lab POO","Bruno","estudo",3,10);
-        bookDataBase.addBook("industria 4.0","Alexandre","estudo",4,10);
-
-        bookDataBase.addBook("Star Wars: A Ascensão Skywalker","Autor Star Wars","Filmes",51, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Harry Potter e a Pedra Filosofal","J.K. Rowling","Filmes",52, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Vingadores: Ultimato","Autor Vingadores","Filmes",53, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Interestelar","Autor Interestelar","Filmes",54, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("O Senhor dos Anéis: O Retorno do Rei","J.R.R. Tolkien","Filmes",55, (int) (Math.random() * 10) + 1);
-
-        bookDataBase.addBook("Clean Code: A Handbook of Agile Software Craftsmanship","Robert C. Martin","T.I",56, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Cracking the Coding Interview","Gayle Laakmann McDowell","T.I",57, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Design Patterns: Elements of Reusable Object-Oriented Software","Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides","T.I",58, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Introduction to Algorithms","Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein","T.I",59, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("The Pragmatic Programmer: Your Journey to Mastery","Andrew Hunt, David Thomas","T.I",60, (int) (Math.random() * 10) + 1);
-
-        bookDataBase.addBook("Biologia Celular e Molecular","Junqueira & Carneiro","Biologia",61, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("O Mundo de Sofia","Jostein Gaarder","Biologia",62, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("A Origem das Espécies","Charles Darwin","Biologia",63, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Sapiens: Uma Breve História da Humanidade","Yuval Noah Harari","Biologia",64, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Genética na Agropecuária","Carlos Frederico Martins","Biologia",65, (int) (Math.random() * 10) + 1);
-
-        bookDataBase.addBook("Cálculo Vol. 1","James Stewart","Matemática",66, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Geometria Analítica","Paulo Boulos, Carlos Américo","Matemática",67, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Álgebra Linear","Howard Anton","Matemática",68, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Fundamentos da Matemática Elementar","Gelson Iezzi, Osvaldo Dolce, Maria Aparecida","Matemática",69, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("O Andar do Bêbado: Como o Acaso Determina Nossas Vidas","Leonard Mlodinow","Matemática",70, (int) (Math.random() * 10) + 1);
-
-        bookDataBase.addBook("Java: Como Programar","Paul J. Deitel, Harvey Deitel","Linguagens de programação",71, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Python Fluente","Luciano Ramalho","Linguagens de programação",72, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("JavaScript: The Good Parts","Douglas Crockford","Linguagens de programação",73, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("C Programming Language","Brian W. Kernighan, Dennis M. Ritchie","Linguagens de programação",74, (int) (Math.random() * 10) + 1);
-        bookDataBase.addBook("Estruturas de Dados e Algoritmos em JavaScript","Loiane Groner","Linguagens de programação",75, (int) (Math.random() * 10) + 1);
+//        bookDataBase.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 5, 3, true);
+//        bookDataBase.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 2, 7, 5, true);
+//        bookDataBase.addBook("Sapiens: Uma Breve História da Humanidade", "Yuval Noah Harari", "História", 3, 10, 8, true);
+//        bookDataBase.addBook("O Gene: Uma História Íntima", "Siddhartha Mukherjee", "Biologia", 4, 3, 2, true);
+//        bookDataBase.addBook("Princípios de Bioquímica de Lehninger", "David L. Nelson", "Biologia", 5, 8, 6, true);
+//        bookDataBase.addBook("Cálculo Vol. 1", "James Stewart", "Matemática", 6, 6, 4, true);
+//        bookDataBase.addBook("O Andar do Bêbado: Como o Acaso Determina Nossas Vidas", "Leonard Mlodinow", "Matemática", 7, 4, 3, true);
+//        bookDataBase.addBook("A Origem das Espécies", "Charles Darwin", "Biologia", 8, 7, 6, true);
+//        bookDataBase.addBook("Cálculo Vol. 2", "James Stewart", "Matemática", 9, 9, 7, true);
+//        bookDataBase.addBook("Uma Breve História do Tempo", "Stephen Hawking", "Matemática", 10, 5, 4, true);
+//        bookDataBase.addBook("Código Limpo: Habilidades Práticas do Agile Software", "Robert C. Martin", "T.I", 11, 10, 9, true);
+//        bookDataBase.addBook("Engenharia de Software: Uma Abordagem Profissional", "Roger S. Pressman", "T.I", 12, 6, 5, true);
+//        bookDataBase.addBook("Algoritmos: Teoria e Prática", "Thomas H. Cormen", "T.I", 13, 8, 7, true);
+//        bookDataBase.addBook("Química: A Ciência Central", "Theodore L. Brown", "Química", 14, 7, 6, true);
+//        bookDataBase.addBook("Eletromagnetismo", "David J. Griffiths", "Física", 15, 5, 3, true);
+//        bookDataBase.addBook("O Universo Numa Casca de Noz", "Stephen Hawking", "Matemática", 16, 6, 4, true);
+//        bookDataBase.addBook("Introdução à Química Orgânica", "William H. Brown", "Química", 17, 4, 2, true);
+//        bookDataBase.addBook("A História do Brasil Para Quem Tem Pressa", "Marco Antonio Villa", "História", 18, 8, 6, true);
+//        bookDataBase.addBook("Teoria da Computação", "John C. Martin", "T.I", 19, 7, 5, true);
+//        bookDataBase.addBook("Física para Cientistas e Engenheiros", "Paul A. Tipler", "Física", 20, 9, 8, true);
+//        bookDataBase.addBook("A Era dos Impérios: 1875-1914", "Eric J. Hobsbawm", "História", 21, 6, 5, true);
+//        bookDataBase.addBook("A História do Mundo em 6 Copos", "Tom Standage", "História", 22, 7, 6, true);
+//        bookDataBase.addBook("Algoritmos e Estrutura de Dados", "Nivio Ziviani", "T.I", 23, 5, 4, true);
+//        bookDataBase.addBook("Química Geral", "Raymond Chang", "Química", 24, 8, 7, true);
+//        bookDataBase.addBook("História da Vida Privada no Brasil", "Fernando A. Novais", "História", 25, 9, 8, true);
+//        bookDataBase.addBook("Matemática Financeira", "Carlos Patricio Samanez", "Matemática", 26, 6, 5, true);
+//        bookDataBase.addBook("Física Clássica: Uma Abordagem Moderna", "José Henrique Toledo", "Física", 27, 7, 6, true);
+//        bookDataBase.addBook("A Nova História Militar Brasileira", "Joaquim Ferreira dos Santos", "História", 28, 8, 7, true);
+//        bookDataBase.addBook("Matemática para a Vida", "Jeffrey Bennett", "Matemática", 29, 5, 4, true);
 
 
-        //new LoginScreen();
-        new AdmMenuScreen("Gabriel", "Admin",bookDataBase.getBookDataBase(), bookDataBase);
-        //new AddAndEditScreen("add", bookDataBase);
+        //Abrir tela de login;
+        new LoginScreen(bookDataBase);
     }
 }
-
-
-/*
-
- *   Gestao livro (add,del, edit)
- *   Atualizar disponibilidade
- *   Gestao emprestimo e devolucao
- *   Pesquisar livro tipo
- *
- * */

@@ -6,18 +6,18 @@ public class Book {
     private String category;
     private int isbn;
     private int quantTotal;
+    private int prazo;
+    private boolean dispo;
 
-    //private int quantEmprestada;
-
-    public Book(String title,String author,String category, int isbn, int quantTotal) {
+    public Book(String title,String author,String category, int isbn, int quantTotal, int prazo, boolean dispo) {
         this.title = title;
         this.author = author;
         this.category = category;
         this.isbn = isbn;
         this.quantTotal = quantTotal;
-        //this.quantDisponivel = quantDisponivel;
+        this.prazo = prazo;
+        this.dispo = dispo;
     }
-
 
     public int getIsbn() {
         return isbn;
@@ -49,13 +49,17 @@ public class Book {
     public void setQuantTotal(int quantTotal) {
         this.quantTotal = quantTotal;
     }
-//    public int getQuantDisponivel() {
-//        return quantDisponivel;
-//    }
-//    public void setQuantDisponivel(int quantDisponivel) {
-//        this.quantDisponivel = quantDisponivel;
-//    }
-
-
+    public int getPrazo() {
+        return prazo;
+    }
+    public void setPrazo(int prazo) {
+        this.prazo = prazo;
+    }
+    public boolean isDispo() {
+        return dispo;
+    }
+    public void setDispo(boolean dispo) {
+        this.dispo = dispo;
+    }
 
 }

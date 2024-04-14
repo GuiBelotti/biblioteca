@@ -1,17 +1,4 @@
-mostrar isbn disponivel
-deixar na ordem pelo isbn
-
-
 sts de disponibilidade
     deixar o livro diponivel ou indisponivel
         mostrar o ngc vermelho
         caso indisponivel
-
-prazo de emprestimo
-    definir parazo para o livro
-    tela diferente
-
-
-    arurmei na tela
-    falta fazer funcionar os 2 botoes
-    arrumar coisas na tela
