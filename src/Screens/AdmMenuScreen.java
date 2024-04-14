@@ -91,13 +91,27 @@ public class AdmMenuScreen extends JFrame {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 Component rendererComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                if (isSelected) {
-                    rendererComponent.setBackground(Color.BLUE);
-                    rendererComponent.setForeground(Color.WHITE);
+
+                // Obtém a quantidade de cópias do livro na coluna "Cópias"
+                int quantidade = (int) table.getValueAt(row, 4); // Índice 4 para a coluna "Cópias"
+
+                // Define a cor de fundo da linha com base na quantidade de cópias
+                if (quantidade == 0) {
+                    // Linha inteira fica vermelha se a quantidade de cópias for zero
+                    rendererComponent.setBackground(Color.RED);
+                    // Define a cor do texto para garantir a visibilidade
+                    rendererComponent.setForeground(isSelected ? Color.WHITE : Color.BLACK);
                 } else {
-                    rendererComponent.setBackground(Color.WHITE);
-                    rendererComponent.setForeground(Color.BLACK);
+                    // Aplica a lógica do renderizador original se a quantidade de cópias não for zero
+                    if (isSelected) {
+                        rendererComponent.setBackground(Color.BLUE);
+                        rendererComponent.setForeground(Color.WHITE);
+                    } else {
+                        rendererComponent.setBackground(Color.WHITE);
+                        rendererComponent.setForeground(Color.BLACK);
+                    }
                 }
+
                 return rendererComponent;
             }
         });

@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddAndEditScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
     </list>
     <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
@@ -103,7 +101,7 @@
       <workItem from="1712711043018" duration="17000" />
       <workItem from="1712760216046" duration="83000" />
       <workItem from="1712760311563" duration="5310000" />
-      <workItem from="1712954140448" duration="2433000" />
+      <workItem from="1712954140448" duration="3115000" />
     </task>
     <servers />
   </component>
