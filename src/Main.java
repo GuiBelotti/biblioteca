@@ -1,12 +1,18 @@
-import BookRelacioned.Book;
 import BookRelacioned.BookDataBase;
-import Screens.AdmMenuScreen;
 import Screens.LoginScreen;
+import BookRelacioned.DatabaseManager;
 
 public class Main {
     public static void main(String[] args) {
 
         BookDataBase bookDataBase = new BookDataBase();
+        DatabaseManager.createDatabase();
+        DatabaseManager.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 5, 3, 1);
+        DatabaseManager.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 7, 5, 1);
+
+        DatabaseManager.printAllBooks();
+
+
 //        bookDataBase.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 5, 3, true);
 //        bookDataBase.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 2, 7, 5, true);
 //        bookDataBase.addBook("Sapiens: Uma Breve História da Humanidade", "Yuval Noah Harari", "História", 3, 10, 8, true);

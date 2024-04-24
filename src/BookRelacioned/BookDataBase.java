@@ -76,21 +76,21 @@ public class BookDataBase {
             switch (searchType) {
                 case "Título":
                     if (searchTerm.length() >= 2) {
-                        if (title.contains(searchTerm)) {
+                        if (title.contains(searchTerm.toLowerCase())) {
                             searchResults.add(book);
                         }
                     }
                     break;
                 case "Autor":
                     if (searchTerm.length() >= 2) {
-                        if (author.contains(searchTerm)) {
+                        if (author.contains(searchTerm.toLowerCase())) {
                             searchResults.add(book);
                         }
                     }
                     break;
                 case "Categoria":
                     if (searchTerm.length() >= 2) {
-                        if (category.contains(searchTerm)) {
+                        if (category.contains(searchTerm.toLowerCase())) {
                             searchResults.add(book);
                         }
                     }
@@ -110,33 +110,4 @@ public class BookDataBase {
         return searchResults;
     }
 
-//    public void emprestimoDevolucaoBook(String funcao, int isbn){
-//
-//        if(funcao.equals("emprestar")) {
-//            for (Book emprestarBook : bookDataBase){
-//                if (isbn == emprestarBook.getIsbn()){
-//                    if (emprestarBook.getQuantDisponivel() != 0) {
-//                        emprestarBook.setQuantDisponivel(emprestarBook.getQuantDisponivel() - 1);
-//                    } else {
-//                        emprestarBook.setQuantDisponivel(emprestarBook.getQuantDisponivel());
-//                        //trocar dps para mostrar erro na tela ou vermelho sem conseguir mudar o valor
-//                    }
-//                }
-//            }
-//        }
-//        if(funcao.equals("devolver")) {
-//            for (Book devolverBook : bookDataBase){
-//                if (isbn == devolverBook.getIsbn()){
-//                    if (devolverBook.getQuantTotal() != devolverBook.getQuantDisponivel()) {
-//                        devolverBook.setQuantDisponivel(devolverBook.getQuantDisponivel() + 1);
-//                    }
-//                    //fazer um else para caso n tenha livro emprestadp
-//                }
-//            }
-//        }
-//        for (Book livro : bookDataBase) {
-//            System.out.println("\ntitle : " + livro.getTitle() + "\nauthor : " + livro.getAuthor() + "\ncategory : "
-//                    + livro.getCategory() + "\nisbn : " + livro.getIsbn() + "\nQuantidade: " + livro.getQuantTotal());
-//        }
-//    }
 }
