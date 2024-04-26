@@ -12,18 +12,17 @@ public class DatabaseManager {
     }
 
     public static void createDatabase() {
-        // Conectar ao banco de dados
         try (Connection conn = DriverManager.getConnection(DB_URL)) {
             if (conn != null) {
                 System.out.println("Conexão estabelecida com o banco de dados SQLite.");
 
-                // Criar a estrutura da tabela
                 try (Statement statement = conn.createStatement()) {
                     String sql = "CREATE TABLE IF NOT EXISTS books (" +
                             "title TEXT NOT NULL," +
                             "author TEXT NOT NULL," +
                             "category TEXT NOT NULL," +
-                            "isbn INTEGER PRIMARY KEY AUTOINCREMENT," +
+                            "isbn INTEGER NOT NULL ," +
+                            "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                             "quantityTotal INTEGER NOT NULL," +
                             "quantityLend INTEGER NOT NULL," +
                             "available INTEGER NOT NULL" +
@@ -39,14 +38,14 @@ public class DatabaseManager {
         }
     }
 
-    public static void addBook(String title, String author, String category, int isbn, int quantTotal, int available) {
+    public static void addBook(String title, String author, String category, int isbn, int quantityTotal, int available) {
         try (Connection conn = openDatabaseConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO books (title, author, category, isbn, quantityTotal, quantityLend, available) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
             pstmt.setString(1, title);
             pstmt.setString(2, author);
             pstmt.setString(3, category);
             pstmt.setInt(4, isbn);
-            pstmt.setInt(5, quantTotal);
+            pstmt.setInt(5, quantityTotal);
             pstmt.setInt(6, 0); // quantityLend inicialmente 0
             pstmt.setInt(7, available);
             int rowsAffected = pstmt.executeUpdate();
@@ -76,7 +75,7 @@ public class DatabaseManager {
                 int quantityLend = resultSet.getInt("quantityLend");
                 int available = resultSet.getInt("available");
 
-                Book book = new Book(title, author, category, isbn, quantityTotal, quantityLend, available);
+                Book book = new Book(title, author, category, isbn, quantityTotal, quantityLend, available == 1);
                 books.add(book);
             }
 

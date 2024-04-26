@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/xerial_sqlite_jdbc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BookRelacioned/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biblioteca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookDataBase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OQFAZER" beforeDir="false" />
     </list>
     <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +64,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -143,7 +138,7 @@
       <workItem from="1713186766184" duration="231000" />
       <workItem from="1713193930107" duration="300000" />
       <workItem from="1713899969921" duration="2509000" />
-      <workItem from="1713985045865" duration="4438000" />
+      <workItem from="1713985045865" duration="10768000" />
     </task>
     <servers />
   </component>

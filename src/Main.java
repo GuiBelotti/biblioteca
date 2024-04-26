@@ -7,8 +7,8 @@ public class Main {
 
         BookDataBase bookDataBase = new BookDataBase();
         DatabaseManager.createDatabase();
-        DatabaseManager.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 5, 3, 1);
-        DatabaseManager.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 7, 5, 1);
+        DatabaseManager.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 3, 3);
+        DatabaseManager.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 2, 5 ,3);
 
         DatabaseManager.printAllBooks();
 
@@ -44,7 +44,8 @@ public class Main {
 //        bookDataBase.addBook("Matemática para a Vida", "Jeffrey Bennett", "Matemática", 29, 5, 4, true);
 
 
-        //Abrir tela de login;
+        //arrumar isbn pois n precisa pedir
+
         new LoginScreen(bookDataBase);
     }
 }
