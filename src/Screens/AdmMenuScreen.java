@@ -12,6 +12,7 @@ import java.util.EventObject;
 import java.util.List;
 import BookRelacioned.Book;
 import BookRelacioned.BookDataBase;
+import BookRelacioned.DatabaseManager;
 
 public class AdmMenuScreen extends JFrame {
     private final BookDataBase bookDataBase;
@@ -315,11 +316,12 @@ public class AdmMenuScreen extends JFrame {
 
     }
 
-    static void updateTable(List<Book> bookList) {
+    public static void updateTable(List<Book> updatedBookList) {
+        List<Book> books = DatabaseManager.getAllBooks();
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
 
-        for (Book book : bookList) {
+        for (Book book : books) {
             Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn(), book.getQuantTotal(), book.getPrazo()};
             model.addRow(rowData);
         }

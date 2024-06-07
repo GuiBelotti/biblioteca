@@ -1,10 +1,19 @@
 package BookRelacioned;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Livros")
 public class Book {
+    @Id
+    @GeneratedValue
+    private int isbn;
     private String title;
     private String author;
     private String category;
-    private int isbn;
     private int quantTotal;
     private int prazo;
     private boolean dispo;
@@ -18,6 +27,8 @@ public class Book {
         this.prazo = prazo;
         this.dispo = dispo;
     }
+
+    public Book() { }
 
     public int getIsbn() {
         return isbn;
