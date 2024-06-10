@@ -1,44 +1,39 @@
 package Screens;
+
+import features.book.datasource.BookDAO;
+import features.book.model.Book;
+import features.user.datasource.UserDAO;
+
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.EventObject;
 import java.util.List;
-import BookRelacioned.Book;
-import BookRelacioned.BookDataBase;
-import BookRelacioned.DatabaseManager;
 
 public class AdmMenuScreen extends JFrame {
-    private final BookDataBase bookDataBase;
-    private static JTable table;
-    private String[] columnNames;
+    public static JTable bookTable;
     private List<Book> bookList;
 
-    public AdmMenuScreen(String Name, String function, List<Book> bookList, BookDataBase bookDataBase) {
+    public AdmMenuScreen(String Name, String function, List<Book> bookList, String usuario) {
+        this.bookList = bookList;
 
-        //Configurações de tela
+        // Configurações de tela
         setTitle("Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(800, 550);
         setLayout(null);
 
-        this.bookList = bookList;
-        this.bookDataBase = bookDataBase;
+        // Nomes para colunas
+        String[] columnNames = new String[]{"Título", "Autor", "Categoria", "ISBN", "Cópias", "Prazo"};
 
-        //nomes para colunas
-        columnNames = new String[]{"Título", "Autor", "Categoria", "ISBN", "Cópias", "Prazo"};
-
-        //nomes para topicos pesquisa
+        // Nomes para tópicos pesquisa
         String[] boxNames = new String[]{"Título", "Autor", "Categoria", "ISBN"};
 
-        // criando componentes da tela
+        // Criando componentes da tela
         JLabel userName = new JLabel("Olá " + Name);
         JLabel userCargo = new JLabel("Cargo: " + function);
         JButton exitButton = new JButton("Sair");
@@ -48,46 +43,21 @@ public class AdmMenuScreen extends JFrame {
         JButton searchButton = new JButton("Pesquisar");
         typeList.setPrototypeDisplayValue("Categoria");
 
-        //Criacao da tabela
+        // Criação da tabela
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-        table = new JTable(model);
+        bookTable = new JTable(model);
         DefaultCellEditor nonEditableCellEditor = new DefaultCellEditor(new JTextField()) {
             @Override
-            // Impede a edição da célula
             public boolean isCellEditable(EventObject e) {
                 return false;
             }
         };
 
-        for (int i = 0; i < table.getColumnCount(); i++) {
-            //aplica nao edicao em todas
-            table.setDefaultEditor(table.getColumnClass(i), nonEditableCellEditor);
-        }
-        table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            //seleciona a tabela
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    int selectedRow = table.getSelectedRow();
-                    if (selectedRow != -1) {
-
-                        String title = (String) table.getValueAt(selectedRow, 0);
-                        String author = (String) table.getValueAt(selectedRow, 1);
-                        String category = (String) table.getValueAt(selectedRow, 2);
-                        int isbn = (int) table.getValueAt(selectedRow, 3);
-
-                    }
-                }
-            }
-        });
-        for (Book book : bookList) {
-            //roda a lista
-            Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn(), book.getQuantTotal(), book.getPrazo()};
-            model.addRow(rowData);
+        for (int i = 0; i < bookTable.getColumnCount(); i++) {
+            bookTable.setDefaultEditor(bookTable.getColumnClass(i), nonEditableCellEditor);
         }
 
-        //cria botoes parte inferior
-        JScrollPane scrollPane = new JScrollPane(table);
+        JScrollPane scrollPane = new JScrollPane(bookTable);
         JButton deleteButton = new JButton("Excluir");
         JButton addButton = new JButton("Adicionar");
         JButton editButton = new JButton("Editar");
@@ -95,16 +65,15 @@ public class AdmMenuScreen extends JFrame {
         JButton loanButton = new JButton("Emprestar");
         JButton statusButton = new JButton("Status");
 
-        table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+        bookTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 Component rendererComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-                // Obtém a quantidade de cópias do livro na coluna "Cópias"
                 int quantidade = (int) table.getValueAt(row, 4);
                 int isbnBookDispo = (int) table.getValueAt(row, 3);
                 boolean dispo = true;
-                for (Book book : bookList) {
+                for (Book book : AdmMenuScreen.this.bookList) {
                     if (book.getIsbn() == isbnBookDispo) {
                         if (!book.isDispo()) {
                             dispo = false;
@@ -115,7 +84,6 @@ public class AdmMenuScreen extends JFrame {
                     rendererComponent.setBackground(Color.RED);
                     rendererComponent.setForeground(isSelected ? Color.WHITE : Color.BLACK);
                 } else {
-                    // Aplica a lógica do renderizador original se a quantidade de cópias não for zero
                     if (isSelected) {
                         rendererComponent.setBackground(Color.BLUE);
                         rendererComponent.setForeground(Color.WHITE);
@@ -129,8 +97,6 @@ public class AdmMenuScreen extends JFrame {
             }
         });
 
-
-        // personaliza elementos
         userName.setFont(new Font("Arial", Font.BOLD, 30));
         userCargo.setFont(new Font("Arial", Font.BOLD, 20));
         TableColumn column1 = new TableColumn(0);
@@ -143,13 +109,12 @@ public class AdmMenuScreen extends JFrame {
         column3.setHeaderValue("Categoria");
         column4.setHeaderValue("Autor");
         column5.setHeaderValue("Cópias");
-        table.getColumnModel().getColumn(0).setPreferredWidth(220);
-        table.getColumnModel().getColumn(1).setPreferredWidth(200);
-        table.getColumnModel().getColumn(2).setPreferredWidth(190);
-        table.getColumnModel().getColumn(3).setPreferredWidth(50);
-        table.getColumnModel().getColumn(4).setPreferredWidth(50);
+        bookTable.getColumnModel().getColumn(0).setPreferredWidth(220);
+        bookTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+        bookTable.getColumnModel().getColumn(2).setPreferredWidth(190);
+        bookTable.getColumnModel().getColumn(3).setPreferredWidth(50);
+        bookTable.getColumnModel().getColumn(4).setPreferredWidth(50);
 
-        // posiciona elementos na tela
         userName.setBounds(20, 10, 300, 50);
         userCargo.setBounds(20, 40, 300, 50);
         exitButton.setBounds(660, 10, 100, 30);
@@ -166,7 +131,6 @@ public class AdmMenuScreen extends JFrame {
         devolutionButton.setBounds(536, 470, 100, 30);
         statusButton.setBounds(665, 470, 100, 30);
 
-        // adiciona elementos na tela
         add(userName);
         add(userCargo);
         add(exitButton);
@@ -182,149 +146,192 @@ public class AdmMenuScreen extends JFrame {
         add(loanButton);
         add(statusButton);
 
+        if ("admin".equalsIgnoreCase(UserDAO.getUserCargo(usuario))){
+            userName.setVisible(true);
+            userCargo.setVisible(true);
+            exitButton.setVisible(true);
+            userButton.setVisible(true);
+            searchButton.setVisible(true);
+            searchTextField.setVisible(true);
+            typeList.setVisible(true);
+            scrollPane.setVisible(true);
+            deleteButton.setVisible(true);
+            addButton.setVisible(true);
+            editButton.setVisible(true);
+            devolutionButton.setVisible(true);
+            loanButton.setVisible(true);
+            statusButton.setVisible(true);
+        }
+        else {
+            userName.setVisible(true);
+            userCargo.setVisible(true);
+            exitButton.setVisible(true);
+            userButton.setVisible(false);
+            searchButton.setVisible(true);
+            searchTextField.setVisible(true);
+            typeList.setVisible(true);
+            scrollPane.setVisible(true);
+            deleteButton.setVisible(false);
+            addButton.setVisible(false);
+            editButton.setVisible(false);
+            devolutionButton.setVisible(true);
+            loanButton.setVisible(true);
+            statusButton.setVisible(false);
+
+            loanButton.setBounds(20, 470, 100, 30);
+            devolutionButton.setBounds(149, 470, 100, 30);
+        }
+
+
         setLocationRelativeTo(null);
         setVisible(true);
 
-        //funcao do botao add
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                //abre nova tela
-                new AddEditDelScreen("add", bookDataBase, null, null, null, null, null, null);
-                List<Book> updatedBookList = bookDataBase.getBookDataBase();
-                updateTable(updatedBookList);
+        userButton.addActionListener(event -> new UserScreen());
+
+        BookDAO.updateTable();
+
+        addButton.addActionListener(event -> {
+            new AddEditDelScreen("add", null, null, null, null, null, null);
+            List<Book> updatedBookList = BookDAO.getAllBooks();
+            AdmMenuScreen.updateTable(updatedBookList);
+        });
+
+        editButton.addActionListener(event -> {
+            int selectedRow = bookTable.getSelectedRow();
+            if (selectedRow != -1) {
+                final String title = (String) bookTable.getValueAt(selectedRow, 0);
+                final String author = (String) bookTable.getValueAt(selectedRow, 1);
+                final String category = (String) bookTable.getValueAt(selectedRow, 2);
+                final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
+                final int copias = (int) bookTable.getValueAt(selectedRow, 4);
+                final int term = (int) bookTable.getValueAt(selectedRow, 5);
+
+                AddEditDelScreen editScreen = new AddEditDelScreen("edit", title, author, category, isbn, copias, term);
+                editScreen.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para editar.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
-        //funcao botao edit
-        editButton.addActionListener(new ActionListener() {
-            @Override
-            //recebe valores da tabela e passa para a nova tela
-            public void actionPerformed(ActionEvent event) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow != -1) {
-                    String title = (String) table.getValueAt(selectedRow, 0);
-                    String author = (String) table.getValueAt(selectedRow, 1);
-                    String category = (String) table.getValueAt(selectedRow, 2);
-                    int isbn = (int) table.getValueAt(selectedRow, 3);
-                    int copias = (int) table.getValueAt(selectedRow, 4);
-                    int term = (int) table.getValueAt(selectedRow, 5);
+        deleteButton.addActionListener(event -> {
+            int selectedRow = bookTable.getSelectedRow();
+            if (selectedRow != -1) {
+                final String title = (String) bookTable.getValueAt(selectedRow, 0);
+                final String author = (String) bookTable.getValueAt(selectedRow, 1);
+                final String category = (String) bookTable.getValueAt(selectedRow, 2);
+                final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
+                final int quantity = (int) bookTable.getValueAt(selectedRow, 4);
+                final int term = (int) bookTable.getValueAt(selectedRow, 5);
 
-                    new AddEditDelScreen("edit", bookDataBase, title, author, category, isbn, copias, term); // Certifique-se de passar o valor de term corretamente
-
-                    List<Book> updatedBookList = bookDataBase.getBookDataBase();
-                    updateTable(updatedBookList);
-                    //erro caso n selecione nenhuma linha
-                } else {
-                    JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para editar.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
-                }
+                new AddEditDelScreen("delet", title, author, category, isbn, quantity, term);
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para excluir.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
-        //botao para deletar
-        deleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                int selectedRow = table.getSelectedRow();
-                //verifica se selecionou linha
-                if (selectedRow != -1) {
-                    String title = (String) table.getValueAt(selectedRow, 0);
-                    String author = (String) table.getValueAt(selectedRow, 1);
-                    String category = (String) table.getValueAt(selectedRow, 2);
-                    int isbn = (int) table.getValueAt(selectedRow, 3);
-                    //passa info para tela que ira deletar
-                    new AddEditDelScreen("delet", bookDataBase, title, author, category, isbn, null, null);
-
-                    List<Book> updatedBookList = bookDataBase.getBookDataBase();
-                    updateTable(updatedBookList);
-                    //erro caso n tenha selecionado
-                } else {
-                    JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para deletar.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
-                }
+        loanButton.addActionListener(event -> {
+            int selectedRow = bookTable.getSelectedRow();
+            if (selectedRow != -1) {
+                final String title = (String) bookTable.getValueAt(selectedRow, 0);
+                final String author = (String) bookTable.getValueAt(selectedRow, 1);
+                final String category = (String) bookTable.getValueAt(selectedRow, 2);
+                final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
+                new AddEditDelScreen("loan", title, author, category, isbn, null, null);
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para fazer o empréstimo.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
-        //faz a pesquisa dos livros
-        searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String searchTerm = searchTextField.getText();
-                String searchType = (String) typeList.getSelectedItem();
-
-                List<Book> updatedBookList;
-                //verifica se o campo de pesquisa esta vazio para atualizar com todos os livros na tabela se nao ele pesquisa e atualiza a tabela com os livro encotrandos de acordo com a entrada
-                if (searchTerm.isEmpty()) {
-                    updatedBookList = bookDataBase.getBookDataBase();
-                    updateTable(updatedBookList);
-                } else {
-                    List<Book> searchResults = bookDataBase.searchBooks(searchTerm, searchType);
-                    updateTable(searchResults);
-                }
+        devolutionButton.addActionListener(event -> {
+            int selectedRow = bookTable.getSelectedRow();
+            if (selectedRow != -1) {
+                final String title = (String) bookTable.getValueAt(selectedRow, 0);
+                final String author = (String) bookTable.getValueAt(selectedRow, 1);
+                final String category = (String) bookTable.getValueAt(selectedRow, 2);
+                final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
+                new AddEditDelScreen("devolution", title, author, category, isbn, null, null);
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para registrar a devolução.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
-        //botao status disponibilidade
-        statusButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                int selectedRow = table.getSelectedRow();
-                //verifica se selecionou linha
-                if (selectedRow != -1) {
-                    int isbn = (int) table.getValueAt(selectedRow, 3);
-                    Book selectedBook = null;
-                    for (Book book : bookList) {
-                        if (book.getIsbn() == isbn) {
-                            selectedBook = book;
-                            break;
-                        }
-                    }
-                    if (selectedBook != null) {
-                        //cria componentes da tela
-                        JRadioButton availableRadioButton = new JRadioButton("Disponível");
-                        JRadioButton unavailableRadioButton = new JRadioButton("Indisponível");
-                        ButtonGroup buttonGroup = new ButtonGroup();
-                        buttonGroup.add(availableRadioButton);
-                        buttonGroup.add(unavailableRadioButton);
+        statusButton.addActionListener(this::actionPerformed);
 
-                        // Define a seleção inicial com base na disponibilidade atual do livro
-                        if (selectedBook.isDispo()) {
-                            availableRadioButton.setSelected(true);
-                        } else {
-                            unavailableRadioButton.setSelected(true);
-                        }
-
-                        //inicializa e add componentes
-                        JPanel radioPanel = new JPanel();
-                        radioPanel.setLayout(new BoxLayout(radioPanel, BoxLayout.Y_AXIS));
-                        radioPanel.add(availableRadioButton);
-                        radioPanel.add(unavailableRadioButton);
-
-                        //cria tela e passa a disponibilidade selecionada
-                        int result = JOptionPane.showConfirmDialog(AdmMenuScreen.this, radioPanel, "Alterar status de disponibilidade", JOptionPane.OK_CANCEL_OPTION);
-                        if (result == JOptionPane.OK_OPTION) {
-                            boolean availability = availableRadioButton.isSelected();
-                            selectedBook.setDispo(availability);
-                            updateTable(bookList);
-                        }
-                    }
-                    //erro caso nao selecione nenhuma tela
-                } else {
-                    JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para atualizar o status.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
-                }
+        searchButton.addActionListener((ActionEvent e) -> {
+            String searchText = searchTextField.getText().trim();
+            String searchType = (String) typeList.getSelectedItem();
+            if (searchType != null) {
+                List<Book> results = BookDAO.searchBooks(searchText, searchType.toLowerCase());
+                updateTable(results);  // Atualize a tabela com os resultados da pesquisa
+            }
+            else {
+                updateTable(BookDAO.getAllBooks());
             }
         });
 
+        exitButton.addActionListener((ActionEvent e) -> {
+            dispose();
+            new LoginScreen(null);
+        });
+    }
+
+    private Book getSelectedBook(int selectedRow) {
+        int isbn = (int) bookTable.getValueAt(selectedRow, 3);
+        for (Book book : bookList) {
+            if (book.getIsbn() == isbn) {
+                return book;
+            }
+        }
+        return null;
     }
 
     public static void updateTable(List<Book> updatedBookList) {
-        List<Book> books = DatabaseManager.getAllBooks();
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        DefaultTableModel model = (DefaultTableModel) bookTable.getModel();
         model.setRowCount(0);
 
-        for (Book book : books) {
+        for (Book book : updatedBookList) {
             Object[] rowData = {book.getTitle(), book.getAuthor(), book.getCategory(), book.getIsbn(), book.getQuantTotal(), book.getPrazo()};
             model.addRow(rowData);
         }
     }
 
+    private void actionPerformed(ActionEvent event) {
+        int selectedRow = bookTable.getSelectedRow();
+        if (selectedRow != -1) {
+            Book selectedBook = getSelectedBook(selectedRow);
+            if (selectedBook != null) {
+                JRadioButton availableRadioButton = new JRadioButton("Disponível");
+                JRadioButton unavailableRadioButton = new JRadioButton("Indisponível");
+                ButtonGroup buttonGroup = new ButtonGroup();
+                buttonGroup.add(availableRadioButton);
+                buttonGroup.add(unavailableRadioButton);
+
+                if (selectedBook.isDispo()) {
+                    availableRadioButton.setSelected(true);
+                } else {
+                    unavailableRadioButton.setSelected(true);
+                }
+
+                JPanel radioPanel = new JPanel();
+                radioPanel.setLayout(new BoxLayout(radioPanel, BoxLayout.Y_AXIS));
+                radioPanel.add(availableRadioButton);
+                radioPanel.add(unavailableRadioButton);
+
+                int result = JOptionPane.showConfirmDialog(AdmMenuScreen.this, radioPanel, "Alterar status de disponibilidade", JOptionPane.OK_CANCEL_OPTION);
+                if (result == JOptionPane.OK_OPTION) {
+                    boolean availability = availableRadioButton.isSelected();
+                    selectedBook.setDispo(availability);
+
+                    BookDAO.updateBookAvailability(selectedBook.getIsbn(), availability);
+                    bookList = BookDAO.getAllBooks();
+                    updateTable(bookList);
+                }
+            } else {
+                JOptionPane.showMessageDialog(AdmMenuScreen.this, "Erro: Livro não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(AdmMenuScreen.this, "Selecione um livro na tabela para atualizar o status.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
+        }
+    }
 }

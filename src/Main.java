@@ -1,16 +1,21 @@
-import BookRelacioned.BookDataBase;
 import Screens.LoginScreen;
-import BookRelacioned.DatabaseManager;
+import Screens.UserScreen;
+import features.book.datasource.BookDAO;
+import features.user.datasource.UserDAO;
 
 public class Main {
     public static void main(String[] args) {
 
-        BookDataBase bookDataBase = new BookDataBase();
-        DatabaseManager.createDatabase();
-        DatabaseManager.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 3, 3);
-        DatabaseManager.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 2, 5 ,3);
-
-        DatabaseManager.printAllBooks();
+        BookDAO bookDataBase = new BookDAO();
+        UserDAO userDataBase = new UserDAO();
+        BookDAO.createDatabase();
+        UserDAO.createDatabase();
+        //UserDAO.deleteUser("admin");
+        //UserDAO.addUser("admin", "admin", "admin");
+        BookDAO.deleteBook(1);
+        BookDAO.deleteBook(2);
+        BookDAO.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 3, 3);
+        BookDAO.addBook("Campbell Biologia", "Jane B. Reece", "Biologia", 2, 5 ,3);
 
 
 //        bookDataBase.addBook("Biologia Celular", "Bruce Alberts", "Biologia", 1, 5, 3, true);
@@ -46,6 +51,6 @@ public class Main {
 
         //arrumar isbn pois n precisa pedir
 
-        new LoginScreen(bookDataBase);
+        new LoginScreen(userDataBase);
     }
 }

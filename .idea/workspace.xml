@@ -5,12 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Screens/AddUserScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Screens/UserScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/bookDataBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookRelacioned/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biblioteca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/di/ServiceLocator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskSubscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/model/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskViewImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/DatabaseManager.java" afterDir="false" />
     </list>
     <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
+    <list id="e8a6368b-b0c4-4d00-9c28-6557f3e65751" name="Changes by guilherme" comment="">
+      <change beforePath="$PROJECT_DIR$/bookDataBase.db" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +46,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -38,49 +63,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ChildExample.executor": "Run",
-    "Application.DataBaseManager.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.teste.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "383",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "2",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/CR/Documents/GitHub/biblioteca",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/guilherme/IdeaProjects/biblioteca/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ChildExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataBaseManager.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DatabaseManager.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.teste.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;383&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CR/Documents/GitHub/biblioteca&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/guilherme/IdeaProjects/biblioteca/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CR\Documents\GitHub\biblioteca\src\Screens" />
+      <recent name="C:\Users\CR\IdeaProjects\biblioteca2\src\infrastructure" />
       <recent name="C:\Users\CR\Documents\GitHub\biblioteca" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -93,7 +122,7 @@
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BookRelacioned.*" />
+          <option name="PATTERN" value="features.book.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,19 +133,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="biblioteca" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="biblioteca" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="biblioteca" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,6 +176,11 @@
       <workItem from="1713985045865" duration="10768000" />
       <workItem from="1717789193263" duration="173000" />
       <workItem from="1717789388002" duration="2201000" />
+      <workItem from="1717874325802" duration="6239000" />
+      <workItem from="1717905365588" duration="29826000" />
+      <workItem from="1718038319474" duration="368000" />
+      <workItem from="1718038818304" duration="105000" />
+      <workItem from="1718038950398" duration="506000" />
     </task>
     <servers />
   </component>

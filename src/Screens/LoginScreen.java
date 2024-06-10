@@ -1,14 +1,12 @@
 package Screens;
-import BookRelacioned.BookDataBase;
-
+import features.book.datasource.BookDAO;
+import features.user.datasource.UserDAO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class LoginScreen extends JFrame {
 
-    public LoginScreen(BookDataBase bookDataBase) {
+    public LoginScreen(UserDAO bookDataBase) {
 
         //Configurações da tela
         setVisible(true);
@@ -46,15 +44,21 @@ public class LoginScreen extends JFrame {
 
         pack();
 
-        //Funcao do botao logar
-        botaoLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Fecha a janela de login
-                dispose();
-                // Abre a janela do menu
-                new AdmMenuScreen("Gabriel", "Administrador",bookDataBase.getBookDataBase(), bookDataBase);
+        // Função do botão logar
+        botaoLogin.addActionListener(e -> {
+            String usuario = fieldUsuario.getText().toString();
+            String senha = new String(fieldSenha.getPassword()).toString();
+
+            // Verifica no banco de dados se o usuário e senha estão corretos
+            boolean isValidUser = UserDAO.validateUser(usuario, senha);
+
+            // JOptionPane.showMessageDialog(null, isValidUser, "Teste", JOptionPane.WARNING_MESSAGE); // Comentado para remover a mensagem de teste
+            if (isValidUser) {
+                    dispose();
+                    new AdmMenuScreen(usuario, UserDAO.getUserCargo(usuario), BookDAO.getAllBooks(), usuario);
+            } else {
+                // Se o usuário não for válido, exibe uma mensagem de erro
+                JOptionPane.showMessageDialog(LoginScreen.this, "Usuário ou senha incorretos. Tente novamente.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
             }
         });
-
     }}
