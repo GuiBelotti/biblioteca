@@ -3,6 +3,8 @@ package Screens;
 import features.book.datasource.BookDAO;
 import features.book.model.Book;
 import features.user.datasource.UserDAO;
+import features.loans.datasource.*;
+import features.loans.model.Loan;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -10,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.time.LocalDate;
 import java.util.EventObject;
 import java.util.List;
 
@@ -237,23 +240,18 @@ public class AdmMenuScreen extends JFrame {
                 final String author = (String) bookTable.getValueAt(selectedRow, 1);
                 final String category = (String) bookTable.getValueAt(selectedRow, 2);
                 final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
-                new AddEditDelScreen("loan", title, author, category, isbn, null, null);
+                final int prazo = (int) bookTable.getValueAt(selectedRow, 5);
+
+                new LoanScreen(title, author, category, isbn, prazo);
             } else {
                 JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para fazer o empréstimo.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
         devolutionButton.addActionListener(event -> {
-            int selectedRow = bookTable.getSelectedRow();
-            if (selectedRow != -1) {
-                final String title = (String) bookTable.getValueAt(selectedRow, 0);
-                final String author = (String) bookTable.getValueAt(selectedRow, 1);
-                final String category = (String) bookTable.getValueAt(selectedRow, 2);
-                final int isbn = (int) bookTable.getValueAt(selectedRow, 3);
-                new AddEditDelScreen("devolution", title, author, category, isbn, null, null);
-            } else {
-                JOptionPane.showMessageDialog(null, "Selecione um livro na tabela para registrar a devolução.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
-            }
+            // Abrir a LoanListScreen sem depender da seleção na tabela de livros
+            LoanListScreen loanListScreen = new LoanListScreen();
+            loanListScreen.setVisible(true);
         });
 
         statusButton.addActionListener(this::actionPerformed);
@@ -334,4 +332,6 @@ public class AdmMenuScreen extends JFrame {
             JOptionPane.showMessageDialog(AdmMenuScreen.this, "Selecione um livro na tabela para atualizar o status.", "Nenhum livro selecionado", JOptionPane.WARNING_MESSAGE);
         }
     }
+
+
 }

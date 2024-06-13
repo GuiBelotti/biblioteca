@@ -1,6 +1,7 @@
 import Screens.LoginScreen;
 import Screens.UserScreen;
 import features.book.datasource.BookDAO;
+import features.loans.datasource.LoanDAO;
 import features.user.datasource.UserDAO;
 
 public class Main {
@@ -8,8 +9,10 @@ public class Main {
 
         BookDAO bookDataBase = new BookDAO();
         UserDAO userDataBase = new UserDAO();
+        LoanDAO loanDataBase = new LoanDAO();
         BookDAO.createDatabase();
         UserDAO.createDatabase();
+        LoanDAO.createDatabase();
         //UserDAO.deleteUser("admin");
         //UserDAO.addUser("admin", "admin", "admin");
         BookDAO.deleteBook(1);

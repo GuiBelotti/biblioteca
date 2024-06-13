@@ -5,31 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Screens/AddUserScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Screens/UserScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Screens/LoanListScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Screens/LoanScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/loans/datasource/LoanDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/loans/model/Loan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biblioteca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRelacioned/BookDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/biblioteca.db" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/di/ServiceLocator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/datasource/TaskSubscriber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/model/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskControllerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/task/presentation/TaskViewImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/book/datasource/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/book/datasource/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/user/datasource/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user/datasource/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/DatabaseManager.java" afterDir="false" />
     </list>
     <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
-    <list id="e8a6368b-b0c4-4d00-9c28-6557f3e65751" name="Changes by guilherme" comment="">
-      <change beforePath="$PROJECT_DIR$/bookDataBase.db" beforeDir="false" />
-    </list>
+    <list id="e8a6368b-b0c4-4d00-9c28-6557f3e65751" name="Changes by guilherme" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,6 +171,7 @@
       <workItem from="1718038319474" duration="368000" />
       <workItem from="1718038818304" duration="105000" />
       <workItem from="1718038950398" duration="506000" />
+      <workItem from="1718312237420" duration="7211000" />
     </task>
     <servers />
   </component>

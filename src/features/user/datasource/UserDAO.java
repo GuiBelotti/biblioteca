@@ -11,7 +11,7 @@ public class UserDAO {
 
     // Criar User BD
     public static void createDatabase() {
-        String createTableSQL = "CREATE TABLE IF NOT EXISTS Usuario ("
+        String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
                 + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "name TEXT NOT NULL,"
                 + "senha TEXT NOT NULL,"

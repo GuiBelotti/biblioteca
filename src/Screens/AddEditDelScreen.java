@@ -1,6 +1,8 @@
 package Screens;
+
 import features.book.datasource.BookDAO;
 import features.book.model.Book;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -39,7 +41,7 @@ public class AddEditDelScreen extends JFrame {
         JLabel titleOfDeletedBook = new JLabel("  " + title);
         JLabel authorOfDeletedBook = new JLabel("  " + author);
         JLabel categoryOfDeletedBook = new JLabel("  " + category);
-        JLabel isbnOfDeletedBook = new JLabel();
+        JLabel isbnOfDeletedBook = new JLabel(String.valueOf(isbn));  // Configura o ISBN aqui
         titleOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         authorOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         categoryOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
@@ -146,7 +148,7 @@ public class AddEditDelScreen extends JFrame {
                 });
 
             }
-        } else  {
+        } else {
 
             setTitle("Deletar livro");
             panel.add(labelTitulo);

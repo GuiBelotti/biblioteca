@@ -172,6 +172,36 @@ public class BookDAO {
         }
     }
 
+    //Adicionar uma copia pela devolucao
+    public static void incrementBookCopies(int isbn) {
+        String updateSQL = "UPDATE books SET quantTotal = quantTotal + 1 WHERE isbn = ?";
+
+        try (Connection conn = DriverManager.getConnection(DATABASE_URL);
+             PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
+
+            pstmt.setInt(1, isbn);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Adicionar uma copia pela devolucao
+    public static void desincrementBookCopies(int isbn) {
+        String updateSQL = "UPDATE books SET quantTotal = quantTotal - 1 WHERE isbn = ?";
+
+        try (Connection conn = DriverManager.getConnection(DATABASE_URL);
+             PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
+
+            pstmt.setInt(1, isbn);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     // Atualizar tabela de livros
     public static void updateTable() {
         DefaultTableModel model = (DefaultTableModel) bookTable.getModel();
