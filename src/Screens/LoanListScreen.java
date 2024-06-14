@@ -1,5 +1,7 @@
 package Screens;
 
+import BookRelacioned.Book;
+import features.book.datasource.BookDAO;
 import features.loans.datasource.LoanDAO;
 import features.loans.model.Loan;
 
@@ -54,7 +56,9 @@ public class LoanListScreen extends JFrame {
         int selectedRow = loanTable.getSelectedRow();
         if (selectedRow != -1) {
             int isbn = (int) loanTable.getValueAt(selectedRow, 0);
+            BookDAO.incrementBookCopies(isbn);
             LoanDAO.deleteLoan(isbn); // Remover o empréstimo do banco de dados
+            AdmMenuScreen.updateTable(BookDAO.getAllBooks());
 
             // Remover linha da tabela
             tableModel.removeRow(selectedRow);
