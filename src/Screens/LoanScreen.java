@@ -1,10 +1,9 @@
-package src.Screens;
+package Screens;
 
-import src.features.book.datasource.BookDAO;
-import src.features.loans.datasource.LoanDAO;
+import features.book.datasource.BookDAO;
+import features.loans.datasource.LoanDAO;
 
 import javax.swing.*;
-import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -78,7 +77,7 @@ public class LoanScreen extends JFrame {
         confirmButton.addActionListener(event -> {
             String borrowerName = nameField.getText().trim();
             if (!borrowerName.isEmpty()) {
-                src.features.loans.datasource.LoanDAO.addLoan(isbn, borrowerName, currentDate, returnDate);
+                LoanDAO.addLoan(isbn, borrowerName, currentDate, returnDate);
                 BookDAO.desincrementBookCopies(isbn);
 
                 JOptionPane.showMessageDialog(this, "Empréstimo realizado com sucesso!");

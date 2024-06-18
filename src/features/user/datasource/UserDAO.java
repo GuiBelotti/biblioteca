@@ -1,4 +1,4 @@
-package src.features.user.datasource;
+package features.user.datasource;
 import features.user.model.User;
 
 import java.sql.*;

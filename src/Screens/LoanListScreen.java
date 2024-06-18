@@ -1,12 +1,11 @@
-package src.Screens;
+package Screens;
 
-import src.features.book.datasource.BookDAO;
-import src.features.loans.datasource.LoanDAO;
-import src.features.loans.model.Loan;
+import features.book.datasource.BookDAO;
+import features.loans.datasource.LoanDAO;
+import features.loans.model.Loan;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 

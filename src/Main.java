@@ -1,9 +1,7 @@
-package src;
-import src.features.book.datasource.BookDAO;
-import src.features.loans.datasource.LoanDAO;
-import src.features.user.datasource.UserDAO;
-import src.Screens.LoginScreen;
-import src.Screens.UserScreen;
+import features.book.datasource.BookDAO;
+import features.loans.datasource.LoanDAO;
+import features.user.datasource.UserDAO;
+import Screens.LoginScreen;
 
 public class Main {
     public static void main(String[] args) {

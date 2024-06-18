@@ -1,8 +1,8 @@
-package src.Screens;
+package Screens;
 
-import src.features.book.datasource.BookDAO;
+import features.book.datasource.BookDAO;
 import features.book.model.Book;
-import src.features.user.datasource.UserDAO;
+import features.user.datasource.UserDAO;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -10,7 +10,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.time.LocalDate;
 import java.util.EventObject;
 import java.util.List;
 

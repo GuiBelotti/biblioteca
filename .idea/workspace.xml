@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="" />
+    <list default="true" id="55ffe0f6-c3ca-4b64-bb47-539a26f2aa88" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biblioteca.db" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/AddEditDelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddEditDelScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/AddUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AddUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/AdmMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/AdmMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/EditUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/EditUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/LoanListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoanListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/LoanScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoanScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/LoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Screens/UserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screens/UserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/book/datasource/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/book/datasource/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/book/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/book/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/loans/datasource/LoanDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/loans/datasource/LoanDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/loans/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/loans/model/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/user/datasource/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user/datasource/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/features/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/infrastructure/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/DatabaseManager.java" afterDir="false" />
+    </list>
     <list id="938097ab-a2b4-4a03-98c0-7b789910981e" name="Changes by CR" comment="" />
     <list id="e8a6368b-b0c4-4d00-9c28-6557f3e65751" name="Changes by guilherme" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +106,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CR\Documents\GitHub\biblioteca\src" />
       <recent name="C:\Users\CR\Documents\GitHub\biblioteca\src\Screens" />
       <recent name="C:\Users\CR\IdeaProjects\biblioteca2\src\infrastructure" />
       <recent name="C:\Users\CR\Documents\GitHub\biblioteca" />
@@ -94,7 +115,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DatabaseManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookRelacioned.DatabaseManager" />
       <module name="biblioteca" />
@@ -167,7 +188,7 @@
       <workItem from="1718684827627" duration="1250000" />
       <workItem from="1718695632095" duration="91000" />
       <workItem from="1718719763061" duration="270000" />
-      <workItem from="1718720072813" duration="2731000" />
+      <workItem from="1718720072813" duration="7434000" />
     </task>
     <servers />
   </component>
@@ -177,5 +198,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/biblioteca$Main.ic" NAME="Main Coverage Results" MODIFIED="1718730903930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

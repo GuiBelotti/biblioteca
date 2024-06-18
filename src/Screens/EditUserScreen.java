@@ -1,6 +1,6 @@
-package src.Screens;
+package Screens;
 
-import src.features.user.datasource.UserDAO;
+import features.user.datasource.UserDAO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -63,11 +63,10 @@ public class EditUserScreen extends JFrame {
 
         UserDAO.updateUser(newName, newCargo, newSenha);
 
-        // Atualizar a linha na tabela da UserScreen
         UserScreen.updateTableRow(newName, newCargo, newSenha, rowIndex);
 
         JOptionPane.showMessageDialog(null, "Usuário atualizado com sucesso!");
 
-        dispose(); // Fechar a tela de edição após salvar
+        dispose();
     }
 }

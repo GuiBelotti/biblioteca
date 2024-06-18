@@ -1,7 +1,7 @@
-package src.infrastructure;
+package infrastructure;
 
 import features.book.model.Book;
-import src.features.loans.model.Loan;
+import features.loans.model.Loan;
 import features.user.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
