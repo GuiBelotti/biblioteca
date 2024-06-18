@@ -1,10 +1,9 @@
 package src;
-
-import Screens.LoginScreen;
-import Screens.UserScreen;
-import features.book.datasource.BookDAO;
-import features.loans.datasource.LoanDAO;
-import features.user.datasource.UserDAO;
+import src.features.book.datasource.BookDAO;
+import src.features.loans.datasource.LoanDAO;
+import src.features.user.datasource.UserDAO;
+import src.Screens.LoginScreen;
+import src.Screens.UserScreen;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,6 +47,6 @@ public class Main {
 //        BookDAO.addBook("A Nova História Militar Brasileira", "Joaquim Ferreira dos Santos", "História", 28, 8, 7);
 //        BookDAO.addBook("Matemática para a Vida", "Jeffrey Bennett", "Matemática", 29, 5, 4);
 
-        new LoginScreen(userDataBase);
+        new LoginScreen(new UserDAO());
     }
 }

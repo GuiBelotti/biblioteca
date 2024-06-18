@@ -1,10 +1,8 @@
-package Screens;
+package src.Screens;
 
-import features.book.datasource.BookDAO;
+import src.features.book.datasource.BookDAO;
 import features.book.model.Book;
-import features.user.datasource.UserDAO;
-import features.loans.datasource.*;
-import features.loans.model.Loan;
+import src.features.user.datasource.UserDAO;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;

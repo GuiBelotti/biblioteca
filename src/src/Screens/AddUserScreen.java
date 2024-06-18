@@ -1,11 +1,11 @@
-package Screens;
+package src.Screens;
 
-import features.user.datasource.UserDAO;
+import src.features.user.datasource.UserDAO;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static Screens.UserScreen.updateTable;
+import static src.Screens.UserScreen.updateTable;
 
 public class AddUserScreen extends JFrame {
 

@@ -1,13 +1,15 @@
-package features.loans.datasource;
+package src.features.loans.datasource;
 
-import features.loans.model.Loan;
+import src.features.loans.model.Loan;
+import src.features.loans.model.Loan;
+
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Screens.AdmMenuScreen.bookTable;
+import static src.Screens.AdmMenuScreen.bookTable;
 
 public class LoanDAO {
     private static final String DATABASE_URL = "jdbc:sqlite:biblioteca.db";

@@ -1,6 +1,6 @@
-package Screens;
-import features.book.datasource.BookDAO;
-import features.user.datasource.UserDAO;
+package src.Screens;
+import src.features.book.datasource.BookDAO;
+import src.features.user.datasource.UserDAO;
 import javax.swing.*;
 import java.awt.*;
 

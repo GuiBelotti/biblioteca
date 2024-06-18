@@ -1,6 +1,6 @@
-package Screens;
+package src.Screens;
 
-import features.user.datasource.UserDAO;
+import src.features.user.datasource.UserDAO;
 import features.user.model.User;
 
 import javax.swing.*;
@@ -90,5 +90,10 @@ public class UserScreen extends JFrame {
         model.setValueAt(name, rowIndex, 0);
         model.setValueAt(cargo, rowIndex, 1);
         model.setValueAt(senha, rowIndex, 2);
+    }
+
+    private class EditUserScreen {
+        public EditUserScreen(String name, String cargo, String senha, int selectedRow) {
+        }
     }
 }

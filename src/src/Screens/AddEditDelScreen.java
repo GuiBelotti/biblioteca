@@ -1,6 +1,6 @@
-package Screens;
+package src.Screens;
 
-import features.book.datasource.BookDAO;
+import src.features.book.datasource.BookDAO;
 import features.book.model.Book;
 
 import javax.swing.*;

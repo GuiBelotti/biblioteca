@@ -1,4 +1,4 @@
-package features.loans.model;
+package src.features.loans.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
-package Screens;
+package src.Screens;
 
-import features.user.datasource.UserDAO;
+import src.features.user.datasource.UserDAO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
