@@ -15,18 +15,16 @@ public class LoginScreen extends JFrame {
         setMinimumSize(new Dimension(300, 150));
         setMaximumSize(new Dimension(350, 200));
 
-
         setTitle("Login");
 
         JPanel panel = new JPanel(new GridLayout(3, 2));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        //Elementos da tela
+        //elementos
         JLabel labelUsuario = new JLabel("Usuário:");
         JTextField fieldUsuario = new JTextField(15);
         JLabel labelSenha = new JLabel("Senha:");
         JPasswordField fieldSenha = new JPasswordField(20);
-        //Adicionar elementos na tela
         panel.add(labelUsuario);
         panel.add(fieldUsuario);
         panel.add(labelSenha);
@@ -49,15 +47,12 @@ public class LoginScreen extends JFrame {
             String usuario = fieldUsuario.getText().toString();
             String senha = new String(fieldSenha.getPassword()).toString();
 
-            // Verifica no banco de dados se o usuário e senha estão corretos
             boolean isValidUser = UserDAO.validateUser(usuario, senha);
 
-            // JOptionPane.showMessageDialog(null, isValidUser, "Teste", JOptionPane.WARNING_MESSAGE); // Comentado para remover a mensagem de teste
             if (isValidUser) {
                     dispose();
                     new AdmMenuScreen(usuario, UserDAO.getUserCargo(usuario), BookDAO.getAllBooks(), usuario);
             } else {
-                // Se o usuário não for válido, exibe uma mensagem de erro
                 JOptionPane.showMessageDialog(LoginScreen.this, "Usuário ou senha incorretos. Tente novamente.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
             }
         });

@@ -1,6 +1,5 @@
 package Screens;
 
-import BookRelacioned.Book;
 import features.book.datasource.BookDAO;
 import features.loans.datasource.LoanDAO;
 import features.loans.model.Loan;
@@ -16,14 +15,13 @@ public class LoanListScreen extends JFrame {
     private DefaultTableModel tableModel;
 
     public LoanListScreen() {
+
         // Configurações da tela
         setTitle("Devolução de Livro");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(800, 550); // Tamanho fixo da janela
-        setResizable(false); // Impedir redimensionamento da janela
+        setSize(800, 550);
+        setResizable(false);
         setLayout(null);
-
-        // Título da tela
         JLabel titleLabel = new JLabel("Lista de empréstimos:");
         titleLabel.setBounds(20, 20, 200, 30);
         add(titleLabel);
@@ -33,19 +31,16 @@ public class LoanListScreen extends JFrame {
         tableModel = new DefaultTableModel(columnNames, 0);
         loanTable = new JTable(tableModel);
 
-        // JScrollPane para a tabela
         JScrollPane scrollPane = new JScrollPane(loanTable);
-        scrollPane.setBounds(10, 70, 760, 350); // Posição e tamanho do scrollPane
+        scrollPane.setBounds(10, 70, 760, 350);
         add(scrollPane);
 
-        // Botão de devolução
         JButton returnButton = new JButton("Devolver");
-        returnButton.setBounds(340, 450, 100, 30); // Posição e tamanho do botão
+        returnButton.setBounds(340, 450, 100, 30);
         add(returnButton);
 
         returnButton.addActionListener(this::performReturnAction);
 
-        // Preencher tabela com empréstimos
         updateTable(LoanDAO.getAllLoans());
 
         setLocationRelativeTo(null);
@@ -57,10 +52,9 @@ public class LoanListScreen extends JFrame {
         if (selectedRow != -1) {
             int isbn = (int) loanTable.getValueAt(selectedRow, 0);
             BookDAO.incrementBookCopies(isbn);
-            LoanDAO.deleteLoan(isbn); // Remover o empréstimo do banco de dados
+            LoanDAO.deleteLoan(isbn);
             AdmMenuScreen.updateTable(BookDAO.getAllBooks());
 
-            // Remover linha da tabela
             tableModel.removeRow(selectedRow);
         } else {
             JOptionPane.showMessageDialog(this, "Selecione um empréstimo para devolução.",
@@ -68,9 +62,9 @@ public class LoanListScreen extends JFrame {
         }
     }
 
-    // Método para atualizar a tabela de empréstimos
+    // atualizar a tabela de empréstimos
     public void updateTable(List<Loan> loans) {
-        tableModel.setRowCount(0); // Limpar tabela antes de adicionar novos dados
+        tableModel.setRowCount(0);
 
         for (Loan loan : loans) {
             Object[] rowData = {loan.getIsbn(), loan.getName(), loan.getLoanDate(), loan.getReturnDate()};

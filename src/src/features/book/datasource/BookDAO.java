@@ -187,7 +187,7 @@ public class BookDAO {
         }
     }
 
-    //Adicionar uma copia pela devolucao
+    //Retirar uma copia pela emprestimo
     public static void desincrementBookCopies(int isbn) {
         String updateSQL = "UPDATE books SET quantTotal = quantTotal - 1 WHERE isbn = ?";
 

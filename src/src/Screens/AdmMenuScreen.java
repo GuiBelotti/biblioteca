@@ -249,7 +249,6 @@ public class AdmMenuScreen extends JFrame {
         });
 
         devolutionButton.addActionListener(event -> {
-            // Abrir a LoanListScreen sem depender da seleção na tabela de livros
             LoanListScreen loanListScreen = new LoanListScreen();
             loanListScreen.setVisible(true);
         });
@@ -261,7 +260,7 @@ public class AdmMenuScreen extends JFrame {
             String searchType = (String) typeList.getSelectedItem();
             if (searchType != null) {
                 List<Book> results = BookDAO.searchBooks(searchText, searchType.toLowerCase());
-                updateTable(results);  // Atualize a tabela com os resultados da pesquisa
+                updateTable(results);
             }
             else {
                 updateTable(BookDAO.getAllBooks());

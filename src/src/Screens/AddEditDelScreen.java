@@ -41,7 +41,7 @@ public class AddEditDelScreen extends JFrame {
         JLabel titleOfDeletedBook = new JLabel("  " + title);
         JLabel authorOfDeletedBook = new JLabel("  " + author);
         JLabel categoryOfDeletedBook = new JLabel("  " + category);
-        JLabel isbnOfDeletedBook = new JLabel(String.valueOf(isbn));  // Configura o ISBN aqui
+        JLabel isbnOfDeletedBook = new JLabel(String.valueOf(isbn));
         titleOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         authorOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         categoryOfDeletedBook.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
@@ -114,7 +114,8 @@ public class AddEditDelScreen extends JFrame {
                     }
 
                 });
-            } else if (function.equals("edit")) {
+            }
+            else if (function.equals("edit")) {
                 setTitle("Editar livro");
                 titleField.setText(title);
                 isbnField.setText(String.valueOf(isbn));

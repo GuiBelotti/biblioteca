@@ -5,13 +5,11 @@ import features.user.model.User;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.util.EventObject;
 import java.util.List;
 
 public class UserScreen extends JFrame {
 
     private static JTable userTable;
-    private List<User> userList;
 
     public UserScreen() {
         // Configurações da tela
@@ -20,78 +18,77 @@ public class UserScreen extends JFrame {
         setSize(800, 550);
         setLayout(null);
 
-        // Nomes das colunas
         String[] columnNames = new String[]{"Usuário", "Cargo", "Senha"};
 
-        // Criando componentes da tela
         JLabel titleLabel = new JLabel("Lista de Usuários");
         JButton addButton = new JButton("Adicionar");
         JButton deleteButton = new JButton("Excluir");
+        JButton editButton = new JButton("Editar");
 
-        // Criação da tabela
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         userTable = new JTable(model);
 
-        DefaultCellEditor nonEditableCellEditor = new DefaultCellEditor(new JTextField()) {
-            @Override
-            public boolean isCellEditable(EventObject e) {
-                return false;
-            }
-        };
-
-        for (int i = 0; i < userTable.getColumnCount(); i++) {
-            userTable.setDefaultEditor(userTable.getColumnClass(i), nonEditableCellEditor);
-        }
-
         JScrollPane scrollPane = new JScrollPane(userTable);
 
-        // Posicionamento dos componentes
         titleLabel.setBounds(20, 20, 200, 30);
         addButton.setBounds(20, 450, 100, 30);
         deleteButton.setBounds(130, 450, 100, 30);
+        editButton.setBounds(240, 450, 100, 30);
         scrollPane.setBounds(20, 70, 760, 350);
 
-        // Adicionando componentes à tela
         add(titleLabel);
         add(addButton);
         add(deleteButton);
+        add(editButton);
         add(scrollPane);
 
-        // Carregando dados da base de dados
         updateTable(UserDAO.getAllUsers());
 
-        // Configurando ação do botão "Adicionar"
-        addButton.addActionListener(e -> {
-            new AddUserScreen();
-        });
+        addButton.addActionListener(e -> new AddUserScreen());
 
-        // Configurando ação do botão "Excluir"
         deleteButton.addActionListener(e -> {
             int selectedRow = userTable.getSelectedRow();
             if (selectedRow != -1) {
                 String name = (String) userTable.getValueAt(selectedRow, 0);
                 UserDAO.deleteUser(name);
-                userList = UserDAO.getAllUsers();
-                updateTable(userList);
+                updateTable(UserDAO.getAllUsers());
             } else {
                 JOptionPane.showMessageDialog(null, "Selecione um usuário na tabela para excluir.",
                         "Nenhum usuário selecionado", JOptionPane.WARNING_MESSAGE);
             }
         });
 
-        // Exibindo a tela
+        editButton.addActionListener(e -> {
+            int selectedRow = userTable.getSelectedRow();
+            if (selectedRow != -1) {
+                String name = (String) userTable.getValueAt(selectedRow, 0);
+                String cargo = (String) userTable.getValueAt(selectedRow, 1);
+                String senha = (String) userTable.getValueAt(selectedRow, 2);
+                new EditUserScreen(name, cargo, senha, selectedRow);
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecione um usuário na tabela para editar.",
+                        "Nenhum usuário selecionado", JOptionPane.WARNING_MESSAGE);
+            }
+        });
+
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
     public static void updateTable(List<User> userList) {
         DefaultTableModel model = (DefaultTableModel) userTable.getModel();
-        model.setRowCount(0); // Limpa todas as linhas da tabela
+        model.setRowCount(0);
 
-        // Adiciona os usuários à tabela
         for (User user : userList) {
             Object[] rowData = {user.getName(), user.getCargo(), user.getSenha()};
             model.addRow(rowData);
         }
+    }
+
+    public static void updateTableRow(String name, String cargo, String senha, int rowIndex) {
+        DefaultTableModel model = (DefaultTableModel) userTable.getModel();
+        model.setValueAt(name, rowIndex, 0);
+        model.setValueAt(cargo, rowIndex, 1);
+        model.setValueAt(senha, rowIndex, 2);
     }
 }

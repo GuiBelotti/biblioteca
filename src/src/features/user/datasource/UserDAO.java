@@ -116,4 +116,20 @@ public class UserDAO {
 
         return cargo;
     }
+
+    // Atualizar usuário
+    public static void updateUser(String name, String cargo, String senha) {
+        String updateSQL = "UPDATE users SET cargo = ?, senha = ? WHERE name = ?";
+
+        try (Connection conn = DriverManager.getConnection(DATABASE_URL);
+             PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
+            pstmt.setString(1, cargo);
+            pstmt.setString(2, senha);
+            pstmt.setString(3, name);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 }

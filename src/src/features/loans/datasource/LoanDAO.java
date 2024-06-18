@@ -12,7 +12,7 @@ import static Screens.AdmMenuScreen.bookTable;
 public class LoanDAO {
     private static final String DATABASE_URL = "jdbc:sqlite:biblioteca.db";
 
-    // Método para inicializar o banco de dados
+    //inicia bd
     public static void createDatabase() {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS loans ("
                 + "isbn INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -29,7 +29,7 @@ public class LoanDAO {
         }
     }
 
-    // Método para obter todos os empréstimos
+    // get todos os empréstimos
     public static List<Loan> getAllLoans() {
         List<Loan> loans = new ArrayList<>();
         String selectSQL = "SELECT * FROM loans";
@@ -54,7 +54,7 @@ public class LoanDAO {
         return loans;
     }
 
-    // Método para adicionar um empréstimo ao banco de dados
+    // add empréstimo
     public static void addLoan(int isbn, String name, LocalDate loanDate, LocalDate returnDate) {
         String insertSQL = "INSERT INTO loans (isbn, name, loan_date, return_date) VALUES (?, ?, ?, ?)";
 
@@ -70,7 +70,7 @@ public class LoanDAO {
         }
     }
 
-    // Método para deletar um empréstimo do banco de dados
+    // deletar um empréstimo
     public static void deleteLoan(int isbn) {
         String deleteSQL = "DELETE FROM loans WHERE isbn = ?";
 
@@ -83,7 +83,7 @@ public class LoanDAO {
         }
     }
 
-    // Método para atualizar um empréstimo no banco de dados
+    //atualizar um empréstimo
     public static void updateLoan(int isbn, String name, LocalDate loanDate, LocalDate returnDate) {
         String updateSQL = "UPDATE loans SET name = ?, loan_date = ?, return_date = ? WHERE isbn = ?";
 
@@ -99,7 +99,7 @@ public class LoanDAO {
         }
     }
 
-    // Método para atualizar a tabela de empréstimos
+    // atualizar a tabela de empréstimos
     public static void updateTable() {
         DefaultTableModel model = (DefaultTableModel) bookTable.getModel();
         model.setRowCount(0);

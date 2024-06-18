@@ -18,7 +18,6 @@ public class AddUserScreen extends JFrame {
         setSize(400, 300);
         setLocationRelativeTo(null);
 
-        // Configurações do layout
         JPanel panel = new JPanel(new GridLayout(5, 2));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -40,21 +39,20 @@ public class AddUserScreen extends JFrame {
 
         JButton saveButton = new JButton("Salvar");
 
-        // Adicionando componentes ao painel
         panel.add(userLabel);
         panel.add(userField);
         panel.add(passwordLabel);
         panel.add(passwordField);
         panel.add(roleLabel);
         panel.add(adminRadioButton);
-        panel.add(new JLabel()); // Espaço vazio
+        panel.add(new JLabel());
         panel.add(employeeRadioButton);
-        panel.add(new JLabel()); // Espaço vazio
+        panel.add(new JLabel());
         panel.add(saveButton);
 
         add(panel);
 
-        // Ação do botão "Salvar"
+        // Ação do botão Salvar
         saveButton.addActionListener(e -> {
             String username = userField.getText();
             String password = new String(passwordField.getPassword());
